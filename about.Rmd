@@ -1,7 +1,7 @@
 ---
 title: "About this blog"
 description: |
-  Some additional details about the blog
+  This blog is created to publish data visualisation work made by Ong Chee Hong.
 ---
 
 ```{r setup, include=FALSE}

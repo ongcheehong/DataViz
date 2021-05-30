@@ -178,7 +178,7 @@ The completed data visualization using tableau desktop can be accessed through [
 
 ![](img/Final Dashboard.png)
 
-14(a) Do note that the above visualisation is not finalized. The reason being that there is some disorientation when the dashboard is published in Tableau Public. See below for the disoriented dashboard in Tableau Public.
+14(a) Do note that the above visualisation is not finalized. The reason being that there is some disorientation when the dashboard is published to Tableau Public. See below for the disoriented dashboard in Tableau Public.
 
 ![](img/Disoriented Dashboard.png)
 
