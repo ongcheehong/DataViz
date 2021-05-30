@@ -1,5 +1,5 @@
-name: "DataViz"
-title: "DataViz"
+name: "Data Visualisation"
+title: "Data Visualisation"
 description: |
   DataViz
 output_dir: "_site"
@@ -10,3 +10,5 @@ navbar:
     - text: "About"
       href: about.html
 output: distill::distill_article
+
+
