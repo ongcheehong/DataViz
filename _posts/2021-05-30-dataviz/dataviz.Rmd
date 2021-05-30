@@ -78,7 +78,7 @@ The above proposed design incorporated a line chart separated between the six co
 
 5. US will be changed to United States to show consistency with the names of the other five countries.
 
-6. Each line graph is **directly labeled** to allow user user to know the identity of its line instead of the need to reference to a legend.
+6. Each line graph is **directly labeled** to allow user to know the identity of its line instead of the need to reference to a legend.
 
 # 3.0 Data Visualisation
 
@@ -114,7 +114,6 @@ The completed data visualization using tableau desktop can be accessed through [
 ![](img/Data Preparation Process.png)
 
 
-
 ### 4.2 Data Visualisation 
 
 1. Connect tableau with the cleaned datasets. Link both Exports and Imports data via Country and Year/Month. Change the 3 columns for both dataset to their appropriate datatype. 
@@ -126,11 +125,11 @@ The completed data visualization using tableau desktop can be accessed through [
 ![](img/Inputs.png)
 ![](img/Initial input.png)
 
-3. To positioned both Imports and Exports in the same pane for better comparison and visualisation. A dual axis will be performed on SUM (Export Values) and SUM (Import Values).  Both axes will thereafter be synchronized to provide an accurate representation of the data. 
+3. To positioned both Imports and Exports in the same pane for better comparison and visualisation. A dual axis will be performed on SUM (Export Values) and SUM (Import Values).  Both axes will thereafter be synchronised to provide an accurate representation of the data. 
 
 ![](img/Dual-axis.png)
 
-4. Next the measured names will be removed and fixed each line with a label directly. The label is coloured to show distinction between the two measured values. This will also widen the chart for better viewing and also allow the user to understand the representation of each line directly.
+4. Next the measured names will be removed and each line will be fixed with a label directly. The label is coloured to show distinction between the two measured values. This will also widen the chart for better viewing and also allow the user to understand the representation of each line directly.
 
 ![](img/Direct Labelling.png)
 
@@ -138,7 +137,7 @@ The completed data visualization using tableau desktop can be accessed through [
 
 ![](img/Removal of Secondary Axis.png)
 
-6. Next, dots were shown on the line chart to better relate the value with each year/month.
+6. Next, dots were outline on the line chart to better relate the value with each year/month.
 
 ![](img/Dots.png)
 
@@ -182,7 +181,7 @@ The completed data visualization using tableau desktop can be accessed through [
 
 ![](img/Disoriented Dashboard.png)
 
-15. As such we will make some changes to the dashboard. 1) Remove the marker to indicate the month of interest. 2) The annotation will be change to area type instead of mark type. The finalized visualisation is as shown below.
+15. As such we will make some changes to the dashboard. 1) Remove the dotted line indicator to indicate the month of interest. 2) The annotation will be change to area type instead of mark type. The finalized visualisation is as shown below.
 
 ![](img/Final Dashboard_2.png)
 
@@ -193,11 +192,11 @@ The completed data visualization using tableau desktop can be accessed through [
 
 ### 5.1 Three Major Observations
 
-1. Singapore 's import from Hong Kong is **way lower than its export** as compared to other countries.
+1. Singapore 's import from Hong Kong for both years is **way lower than its export** as compared to other countries.
 
 2. The **highest trade value** of around S$7B in 2019 and around S$8B in 2020 is **during the month of August with Mainland China**.
 
-3. Malaysia trade with Singapore has a **steep decrease in the month of Jan 2020 to Apr 2020**.
+3. Malaysia trade with Singapore has a **steep decrease in the month of Jan 2020 to Apr 2020**. The decrease might be due to the possibility of a border closure between Singapore and Malaysia during the Covid-19 period. However, to avoid the **storytelling bug**, no annotation will be written on this possibility.
 
 ### 5.2 Other Observations
 
@@ -205,7 +204,7 @@ The completed data visualization using tableau desktop can be accessed through [
 
 2. Mainland China has seemingly the **highest trading value** with Singapore for most months as compared to the other countries. 
 
-3.	Taiwan’s trade with Singapore has a **gradual increase in the year of 2020**.
+3.	Taiwan’s trade with Singapore has a **gradual increase in the year of 2020**. Taiwan is the only country that seemingly having a gradual increase in both years of study.
 
 4. Singapore’s imports from the United States has experience a **gradual decrease in the year of 2020**. Seemingly, this is the only country with a gradual decrease in trade for both years. 
 
