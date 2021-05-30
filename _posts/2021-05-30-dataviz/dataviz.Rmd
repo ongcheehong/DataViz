@@ -196,7 +196,7 @@ The completed data visualization using tableau desktop can be accessed through [
 
 2. The **highest trade value** of around S$7B in 2019 and around S$8B in 2020 is **during the month of August with Mainland China**.
 
-3. Malaysia trade with Singapore has a **steep decrease in the month of Jan 2020 to Apr 2020**. The decrease might be due to the possibility of a border closure between Singapore and Malaysia during the Covid-19 period. However, to avoid the **storytelling bug**, no annotation will be written on this possibility.
+3. Malaysia trade with Singapore has a **steep decrease in the month of Jan 2020 to Apr 2020**. The decrease might be due to the possibility of a border closure between Singapore and Malaysia during the Covid-19 period. However, to avoid the **storytelling bug**, this possibilty will not be annotated in the chart.
 
 ### 5.2 Other Observations
 
