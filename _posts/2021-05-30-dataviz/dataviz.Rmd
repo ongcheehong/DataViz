@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ![](img/Original Visualisation.png)
 
-The above data visualization is created using the datasets downloaded from the sub-section of [**Merchandise Trade by Region/Market**](https://www.singstat.gov.sg/find-data/search-by-theme/trade-and-investment/merchandise-trade/latest-data) provided by the Department of Statistic, Singapore (DOS). 
+The above data visualisation is created using the datasets downloaded from the sub-section of [**Merchandise Trade by Region/Market**](https://www.singstat.gov.sg/find-data/search-by-theme/trade-and-investment/merchandise-trade/latest-data) provided by the Department of Statistic, Singapore (DOS). 
 
 ### 1.1 Clarity
 1. **Overlapping density plots** might confuse the reader into thinking that there are three different components being measured.
@@ -82,7 +82,7 @@ The above proposed design incorporated a line chart separated between the six co
 
 # 3.0 Data Visualisation
 
-The completed data visualization using tableau desktop can be accessed through [**here**](https://public.tableau.com/app/profile/chee.hong/viz/Singaporestop6merchandisetradingpartners2019-2020/Dashboard1). Do note to select full screen to have better visibility of the chart.
+The completed data visualisation using tableau desktop can be accessed through [**here**](https://public.tableau.com/app/profile/chee.hong/viz/Singaporestop6merchandisetradingpartners2019-2020/Dashboard1). Do note to select full screen to have better visibility of the chart.
 
 # 4.0 Step-by-step data visualisation process
 
