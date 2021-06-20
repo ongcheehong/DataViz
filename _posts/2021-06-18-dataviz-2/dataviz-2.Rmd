@@ -1,7 +1,7 @@
 ---
 title: "DataViz Makeover 2"
 description: |
-  Singapore's Balance of Merchandise Trade
+  Singapore's Balance of Merchandise Trade, January 2011 - December 2020
 author:
   - name: Ong Chee Hong
     url: https://www.linkedin.com/in/alexongch/
@@ -26,22 +26,22 @@ The above data visualisation is obtained from the Department of Statistics, Sing
 ### 1.1 Clarity
 Critique|Suggestion
 ----------|-----------
-1) The chart only shows the 2020 net import and export value. It does not show the value per month which is of more importance to display whether there is growth or decline in trades by comparing with the preceding month. There is no control to allow readers to visualize the increase or decrease of trade between each country per month.| A suggestion is to have a control panel to allow user to select the month & year with added animation to visualize the growth or decline from the preceding month.
-2) The chart does not accurately represent what was stated in the caption/sub-title.The caption stated that **"Since 2009, the value of exports exceeds imports for Singapore's merchandise trade with Mainland China.In comparison, the value of imports exceeds exports for Singapore's trade with United States since 2006."** However, the chart shows the 2020 overall trade with Singapore instead of showing what was stated in the caption.| Similar to the suggestion in 1), a control panel will allow readers to better visualize the amount of trade from month to month which will make more sense on the caption given.
-3) The white dot in the middle of each dot displayed in the chart requires the reader to read before understanding the rationale for it. Additionally, the white dot for those that falls near the x-y axis line will not give the readers a clear picture of whether the export is more than the import or vice versa since the dot covers the 45 degree reference line.| A clearer chart by 1. removing the white dot, 2. making the dots more transparent and 3. making the line more visible by thickening the line will allow readers to instantly understand the chart.
-4) The label for each country only displays the net amount for 2020. It does not display any other useful information such as balance of trade, %trade surplus/trade deficit.|A suggesion is to deploy tooltip for every country displayed on the chart with useful information so that readers 1. do not need to reference to the scale to determine the value and 2. able to visualize more useful information.
-5) The overlapped markers make it difficult for readers to visualize the real size of the marker. Although the marker was highlighted when the cursor was moved onto it, it does not allow the reader to visualize instantly.Additionally, the 45 degree reference line was covered by the markers making it difficult for readers to visualize whether import is more than export or vice versa.| A suggestion is create transparency on the markers to allow readers to better visualize the marker and also the 45 degree reference line.
-6) The bottom import and export scale label does not reflect well on which scale is import and export. | Both label should be in the middle of the scale to allow readers to clearly understand the meaning of each scale better
-7) The animation of the chart does only to move the marker at its own position making it zooming in and out a bit. This animation does not have any value.| A suggestion will be to allow readers to click onto each marker and a tooltip can pop up to show the import and export value. Additionally, animation can help to reader to visualize the movement of the marker from one month to another month.
+1) The chart only shows the 2020 net import and export value. It does not show the value per month which is of more importance to display whether there is growth or decline in trades by comparing with the preceding month. There is no control to allow readers to visualize the increase or decrease of trade between each country per month.| **A suggestion is to have a control panel to allow user to select the month & year with added animation to visualize the growth or decline from the preceding month.**
+2) The chart does not accurately represent what was stated in the caption/sub-title.The caption stated that **"Since 2009, the value of exports exceeds imports for Singapore's merchandise trade with Mainland China.In comparison, the value of imports exceeds exports for Singapore's trade with United States since 2006."** However, the chart shows the 2020 overall trade with Singapore instead of showing what was stated in the caption.| **Similar to the suggestion in 1), a control panel will allow readers to better visualize the amount of trade from month to month which will make more sense on the caption given.**
+3) The white dot in the middle of each dot displayed in the chart requires the reader to read before understanding the rationale for it. Additionally, the white dot for those that falls near the x-y axis line will not give the readers a clear picture of whether the export is more than the import or vice versa since the dot covers the 45 degree reference line.| **A clearer chart by 1. removing the white dot, 2. making the dots more transparent and 3. making the line more visible by thickening the line will allow readers to instantly understand the chart.**
+4) The label for each country only displays the net amount for 2020. It does not display any other useful information such as balance of trade, %trade surplus/trade deficit.| **A suggestion is to deploy tooltip for every country displayed on the chart with useful information so that readers 1. do not need to reference to the scale to determine the value and 2. able to visualize more useful information.**
+5) The overlapped markers make it difficult for readers to visualize the real size of the marker. Although the marker was highlighted when the cursor was moved onto it, it does not allow the reader to visualize instantly.Additionally, the 45 degree reference line was covered by the markers making it difficult for readers to visualize whether import is more than export or vice versa.| **A suggestion is create transparency on the markers to allow readers to better visualize the marker and also the 45 degree reference line.**
+6) The bottom import and export scale label does not reflect well on which scale is import and export. | **Both label should be in the middle of the scale to allow readers to clearly understand the meaning of each scale better.**
+7) The animation of the chart does only to move the marker at its own position making it zooming in and out a bit. This animation does not have any value.| **A suggestion will be to allow readers to click onto each marker and a tooltip can pop up to show the import and export value. Additionally, animation can help to reader to visualize the movement of the marker from one month to another month.**
 
 ### 1.2 Aesthetic
 Critique|Suggestion
 ----------|-----------
-1) The import and export symbol does not reflect well on the meaning of the symbol. | A suggestion is to remove the symbol completely to avoid any confusion among the readers.
-2) Some of the labels are covered by other labels or the markers which make it physically unpleasant looking.| Labels should not be covered by the markers or another label to allow readers to visualize the label more pleasantly.
-3) BLue and green does not constrast well with each other.| A suggestion is to use blue and red instead for colour contrast.
-4) The label for China is out of the chart which makes it unpleasant for readers to visualize.| A suggestion is to have all markers and labels located inside the chart.
-5) As there are too many variables of interest, the huge labels make the whole chart looks cluttered.| A suggestion is to have smaller labels or incorporate a legend to make the chart less cluttered.
+1) The import and export symbol does not reflect well on the meaning of the symbol. | **A suggestion is to remove the symbol completely to avoid any confusion among the readers.**
+2) Some of the labels are covered by other labels or the markers which make it physically unpleasant looking.| **Labels should not be covered by the markers or another label to allow readers to visualize the label more pleasantly.**
+3) BLue and green does not constrast well with each other.| **A suggestion is to use blue and red instead for colour contrast.**
+4) The label for China is out of the chart which makes it unpleasant for readers to visualize.| **A suggestion is to have all markers and labels located inside the chart.**
+5) As there are too many variables of interest, the huge labels make the whole chart looks cluttered.| **A suggestion is to have smaller labels or incorporate a legend to make the chart less cluttered.**
 
 
 # 2.0 Proposed data visualisation design
@@ -59,12 +59,12 @@ Critique|Suggestion
 ### 2.1 Clarity
 Critique|Proposed improvements
 ----------|-----------
-1) The chart only shows the 2020 net import and export value. It does not show the value per month which is of more importance to display whether there is growth or decline in trades by comparing with the preceding month. There is no control to allow readers to visualize the increase or decrease of trade between each country per month.| **The proposed visualisation incorporated a control panel where readers are able to choose the month year of interest and at the same time select the countries of interest.
+1) The chart only shows the 2020 net import and export value. It does not show the value per month which is of more importance to display whether there is growth or decline in trades by comparing with the preceding month. There is no control to allow readers to visualize the increase or decrease of trade between each country per month.| **The proposed visualisation incorporated a control panel where readers are able to choose the month year of interest and at the same time select the countries of interest.**
 2) The chart does not accurately represent what was stated in the caption/sub-title.The caption stated that **"Since 2009, the value of exports exceeds imports for Singapore's merchandise trade with Mainland China.In comparison, the value of imports exceeds exports for Singapore's trade with United States since 2006."** However, the chart shows the 2020 overall trade with Singapore instead of showing what was stated in the caption.| **Instead of having a caption, the control panel do a better job in allowing users to visualize what is represented in the chart.**
 3) The white dot in the middle of each dot displayed in the chart requires the reader to read before understanding the rationale for it. Additionally, the white dot for those that falls near the x-y axis line will not give the readers a clear picture of whether the export is more than the import or vice versa since the dot covers the 45 degree reference line.| **The proposed visualisation incorporate a bold and thicker reference line. Additonally, the markers will be displayed with a certain transparency with borders to show the accurate position of the markers.**
 4) The label for each country only displays the net amount for 2020. It does not display any other useful information such as balance of trade, %trade surplus/trade deficit.|**Tooltip will be deployed with useful information such as balance of trade etc.**
-5) The overlapped markers make it difficult for readers to visualize the real size of the marker. Although the marker was highlighted when the cursor was moved onto it, it does not allow the reader to visualize instantly.Additionally, the 45 degree reference line was covered by the markers making it difficult for readers to visualize whether import is more than export or vice versa.| **Same 3) suggestion, the markers will be filled with certain transparency and the 45 degree reference line will be thicken with darker colors.**
-6) The bottom import and export scale label does not reflect well on which scale is import and export. | **All labels will be situated in the middle of the axis.**
+5) The overlapped markers make it difficult for readers to visualize the real size of the marker. Although the marker was highlighted when the cursor was moved onto it, it does not allow the reader to visualize instantly.Additionally, the 45 degree reference line was covered by the markers making it difficult for readers to visualize whether import is more than export or vice versa.| **Same as 3), the markers will be filled with certain transparency and the 45 degree reference line will be thicken with darker colors.**
+6) The bottom import and export scale label does not reflect well on which scale is import and export. | **All labels will be situated in the middle of the axis to allow user to visualise more easily.**
 7) The animation of the chart does only to move the marker at its own position making it zooming in and out a bit. This animation does not have any value.| **Proper animation will be incorporated into the chart to allow users to see the movement of the markers when they switch from month to month and country to country.**
 
 ### 2.1 Aesthetic
@@ -73,8 +73,8 @@ Critique|Proposed Improvements
 1) The import and export symbol does not reflect well on the meaning of the symbol. | **The proposed visualisation will not incorporate any symbols that does not reflect well on the meaning of the symbol.**
 2) Some of the labels are covered by other labels or the markers which make it physically unpleasant looking.| **Tooltip and smaller labels will be use instead of large physical labels.**
 3) Blue and green does not constrast well with each other.| **Blue and Red will be use to differentiate between the markers**
-4) The label for China is out of the chart which makes it unpleasant for readers to visualize.| **All markers and labels will be within the chart.**
-5) As there are too many variables of interest, the huge labels make the whole chart looks cluttered.| **The proposed design will make heavily make use of tooltips with possible small labels.**
+4) The label for China is out of the chart which makes it unpleasant for readers to visualize.| **All markers and labels will be within the chart to make it aesthetically beautiful.**
+5) As there are too many variables of interest, the huge labels make the whole chart looks cluttered.| **The proposed design will heavily make use of tooltips with possible small labels.**
 
 # 3.0 Data Visualisation
 
@@ -102,7 +102,7 @@ The completed data visualisation using tableau desktop can be accessed through [
 ![](img/Million Dollars.png)
 
 4(b). As such, we will create six new rows (**rows 122 to 137** )at the bottom of the original datasets to modify the region data to **Thousand Dollars**. First, we will create a dummy number, **1000** at **cell PF132**.
-Next, at the first cell (**row PF122**) of the modified dataset, input the formula **PF3*$PF$132**. Lastly, drag the formularize cell to the last cell **cell TU127**
+Next, at the first cell (**row PF122**) of the modified dataset, input the formula **PF3*$PF$132**. Lastly, drag the formularize cell to the last **cell TU127**
 
 ![](img/Thousand Dollars.png)
 
@@ -244,7 +244,9 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 
 ![](img/sheet 1.png)
 
-9. Next, we will create a Total Merchandise Trade chart with certain details of Balance of Trade. First, we will drag the **Export Values** to the Columns and **Import Values** to the Rows as shown below.
+### 4.2 Singapore Merchandise Trade
+
+9. Next, we will create a **Total Merchandise Trade** chart with certain details of Balance of Trade. First, we will drag the **Export Values** to the Columns and **Import Values** to the Rows as shown below.
 
 ![](img/drag exports and imports.png)
 
@@ -325,7 +327,7 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 
 ![](img/transparency.png)
 
-21(a). Next, we will see that on the **%Surplus/Deficit** colour legend on the bottom right of the page is in decimals. We will change that by going to the **SUM(%Surplus/Deficit) and select format by clicking on the triangular button. 
+21(a). Next, we will see that on the **%Surplus/Deficit** colour legend on the bottom right of the page is in decimals. We will change that by going to the SUM(%Surplus/Deficit) and select format by clicking on the triangular button. 
 ![](img/format.png)
 
 
@@ -488,7 +490,7 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 
 48. Next, if we hover our mouse to one of the markers. The tooltip will show all the whole values which is in millions and the %Surplus/Deficit in decimals. This is an inaccurate representation of the markers. First, the markers should be in billion. Second, the value should be represented with a $xxB for easier reading rather than showing whole numbers. Lastly, the percentage should be in % not decimal. As such, we will need to modify and amend our chart.
 
-49. We will first create two new fields. These two fields will be named **Export Values S$B** and **Import Values S$B**. Both fields will make use of the exisiting export and import values and mulitply each row by 1000 to show the accurate numbers. 
+49. We will first create two new fields. These two fields will be named (Export Values S$B) and (Import Values S$B). Both fields will make use of the exisiting export and import values and mulitply each row by 1000 to show the accurate numbers. 
 
 ![](img/export values 1000.png)
 
@@ -527,7 +529,7 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 
 ![](img/new tooltip 1.png)
 
-56. Thereafter, we will check the tooltip again. Notice that the value have change to billion. To ease the reader on reading the tooltip, we will format the tooltip by changing to $B and also change the %Surplus/Deficit to percentage.
+56(c). Thereafter, we will check the tooltip again. Notice that the value have change to billion. To ease the reader on reading the tooltip, we will format the tooltip by changing to **$B** and also change the **%Surplus/Deficit** to percentage.
 
 ![](img/tooltip check.png)
 
@@ -535,7 +537,7 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 
 ![](img/export 1000.png)
 
-57(b). Next, we will format the **SUM(Export Values S$B)** by first clicking on the pane, then change the **default numbers** to **Currency(Custom)**. Thereafter, change the **Display Unit** to **Billions (B)**. Do the same for **SUM(Import Values S$B).
+57(b). Next, we will format the SUM(Export Values S$B) by first clicking on the pane, then change the default numbers to Currency(Custom). Thereafter, change the Display Unit to Billions (B). Do the same for SUM(Import Values S$B).
 
 ![](img/format export 1000.png)
 
@@ -572,7 +574,7 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 ![](img/singapore merchandise trade.png)
 
 
-### Balance of Trade
+### 4.3 Balance of Trade
 
 61. Next, we will start to create another sheet named **Balance of Trade**. This sheet is used to analyse the relationship between **Balance of Trade** and **%Surplus/Deficit**. We will drag the **%Surplus/Deficit** to the columns section and **Balance of Trade** to the rows section.
 
@@ -668,11 +670,13 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 
 80. Lastly, Rename the sheet to **Balance of Trade** and we have completed the design for this sheet.
 
+### 4.4. SG Import & Export
+
 81. We will next move to the last sheet. The purpose of the last sheet is to create a chart similar to the parallel coordinates plot to show the export and import value of a country via a line. First, we will drag the **Measure Names** and **Measure Values** to Columns and Rows respectively.
 
 ![](img/measure names.png)
 
-82. We will some of the fields in the **Measure Values** and retain only **Export Values S$B** and **Import Values S$B**
+82. We will some of the fields in the **Measure Values** and retain only Export Values S$B and Import Values S$B.
 
 ![](img/measure values.PNG)
 
@@ -712,11 +716,11 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 
 ![](img/format surplus deficit.png)
 
-92. Notice that the direction for export and import values are wrong. It should be blue when export values are higher than import value. To amend this, we shall change the position of the **SUM(Export Values S$B)** and **SUM(Import Values S$B)** in the **Measure Values** pane.
+92. Notice that the direction for export and import values are wrong. It should be blue when export values are higher than import value. To amend this, we shall change the position of the SUM(Export Values S$B) and SUM(Import Values S$B) in the **Measure Values** pane.
 
 ![](img/switch import export.png)
 
-93. Next, we will rename the **Import Values S$B** and **Export Values S$B** to **Import** and **Export** since the y-axis is already labelled as **Values**.
+93. Next, we will rename the Import Values S$B and Export Values S$B to **Import** and **Export** since the y-axis is already labelled as **Values**.
 
 ![](img/rename export import.png)
 
@@ -772,7 +776,7 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 
 105. Next, we will drag the text object all the way down to the bottom of the page. 
 
-![](img/caption bottom page.png)
+![](img/text.png)
 
 106. Next, we will incorporate **Animations** to the chart so that users can see the movement of the markers more fluidly and interactively.
 
@@ -802,7 +806,11 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 
 ![](img/minimize size 2.png)
 
-112. The finalized visualisation will looks like this in Tableau Public. Access the link [here] (https://public.tableau.com/app/profile/chee.hong/viz/SingaporeMerchandiseTradeJan2011-Dec2020/Dashboard1) 
+112. We will also add a caption to give some insights to the users using the visualisation. The caption will share about Taiwan increasing trade deficit and also Thailand increasing trade surplus. This will be articulated more in section 5.0 below.
+
+![](img/caption.png)
+
+113. The finalized visualisation will looks like this in Tableau Public. Access the link [here] (https://public.tableau.com/app/profile/chee.hong/viz/SingaporeMerchandiseTradeJan2011-Dec2020/Dashboard1) 
 
 ![](img/final product.png)
 
