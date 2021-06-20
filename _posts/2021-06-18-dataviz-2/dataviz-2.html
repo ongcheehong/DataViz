@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>DataViz Makeover 2</title>
+
+  <meta property="description" itemprop="description" content="Singapore&#39;s Balance of Merchandise Trade"/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-06-18"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-06-18"/>
+  <meta name="article:author" content="Ong Chee Hong"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="DataViz Makeover 2"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Singapore&#39;s Balance of Merchandise Trade"/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="DataViz Makeover 2"/>
+  <meta property="twitter:description" content="Singapore&#39;s Balance of Merchandise Trade"/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["DataViz Makeover 2"]},{"type":"character","attributes":{},"value":["Singapore's Balance of Merchandise Trade\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ong Chee Hong"]},{"type":"character","attributes":{},"value":["https://www.linkedin.com/in/alexongch/"]}]}]},{"type":"character","attributes":{},"value":["06-18-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["dataviz-2_files/anchor-4.2.2/anchor.min.js","dataviz-2_files/bowser-1.9.3/bowser.min.js","dataviz-2_files/distill-2.2.21/template.v2.js","dataviz-2_files/header-attrs-2.8/header-attrs.js","dataviz-2_files/jquery-1.11.3/jquery.min.js","dataviz-2_files/popper-2.6.0/popper.min.js","dataviz-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-2_files/tippy-6.2.7/tippy-light-border.css","dataviz-2_files/tippy-6.2.7/tippy.css","dataviz-2_files/tippy-6.2.7/tippy.umd.min.js","dataviz-2_files/webcomponents-2.0.0/webcomponents.js","img/actions.png","img/add more fields.png","img/all records match.png","img/amend axis.png","img/amend surplus axis.png","img/animation duration.png","img/Animations.png","img/annotate.png","img/apply worksheets.png","img/automatic.png","img/balance of trade.png","img/bar.png","img/bot amend 1.png","img/bot amend.png","img/bot tooltip 1.png","img/bot tooltip.png","img/caption bottom page.png","img/caption dialog box.png","img/caption object.png","img/change axis.png","img/change border.png","img/change datatype.png","img/Change to currency.png","img/Change to original.png","img/circle 2.png","img/circle.png","img/cleaning process.png","img/color marker.png","img/connect to csv.png","img/Connect to Excel.png","img/country detail.png","img/country filter.png","img/country label 1.png","img/country label surplus.png","img/country label.png","img/country surplus marks.png","img/country year bot filter.png","img/create calculated field.png","img/dashboard name.png","img/deficit red.png","img/deficit.png","img/deselect bot y on y.png","img/Draft visualisation.jpeg","img/drag country.png","img/drag export import 1000.png","img/drag exports and imports.png","img/Drag imports.png","img/drag new export import.png","img/drag pct.png","img/drag ref.png","img/drag surplus and bot.png","img/drag surplus.png","img/drag tooltip.png","img/dual axis.png","img/edit axis.png","img/edit colors bot.png","img/edit colors.png","img/edit import axis.png","img/edit tooltip.PNG","img/edit total merchandise trade.png","img/edit trend.png","img/enlarge country.png","img/entire view.png","img/Exclude bottom rows.png","img/Exclude top rows.png","img/export 1000.png","img/export values 1000.png","img/export.png","img/filter export import.png","img/filter month.png","img/final product.png","img/format axis.png","img/format deficit bot.png","img/format deficit.png","img/format export 1000.png","img/format measure values.png","img/format month year.png","img/format month.png","img/format pct deficit 1.png","img/format pct deficit.png","img/format pct surplus.png","img/format surplus deficit.png","img/format surplus.png","img/format.png","img/Hiding of Datasets.png","img/highlight dashboard.png","img/Highlight.png","img/import values 1000.png","img/Importing exports.png","img/importing import.png","img/Imports panel.png","img/Indonesia 2011.png","img/Join 1.png","img/Join 2.PNG","img/line.png","img/Malaysia deficit.png","img/match mark color.png","img/measure names.png","img/measure values.PNG","img/Million Dollars.png","img/minimize size 1.png","img/minimize size 2.png","img/Modified Dataset.png","img/na values.png","img/new tooltip 1.png","img/new tooltip.png","img/null 2.png","img/null.png","img/Original dataset.png","img/Original visualization.jfif","img/output.png","img/pct deficit format.png","img/pct deficit.png","img/pct surplus & deficit.png","img/pct surplus.png","img/pct.png","img/Picture111.png","img/Pivot month.png","img/pivot.png","img/Proposed design.jpeg","img/proposed visualisation.jpg","img/red blue diverging bot.png","img/red blue diverging surplus.png","img/red blue diverging.png","img/ref.png","img/reference line.png","img/refresh.png","img/Remove extra spaces.png","img/remove field label.png","img/rename bot year.png","img/rename bot.png","img/rename export import.png","img/Rename fields.png","img/rename import export.png","img/rename singapore merchandise trade.png","img/rename split.png","img/renamed fields.png","img/replace na.png","img/rotate label.png","img/select color.png","img/select country.png","img/select month apply.png","img/Select months.png","img/selected worksheets 2.png","img/selected worksheets.png","img/sheet 1.png","img/sheet 2.png","img/sheets to dashboard.png","img/Shifting of Dataset.png","img/show filter.png","img/show header.png","img/singapore merchandise trade.png","img/single selection.png","img/size 2.png","img/size surplus.png","img/size.png","img/small balance of trade.png","img/Spaces.png","img/split.png","img/surplus blue.png","img/surplus only.png","img/surplus or deficit.png","img/surplus.png","img/switch import export.png","img/synchronise.png","img/Tableau Prep.png","img/tableau public.png","img/thai.png","img/Thousand Dollars.png","img/tooltip bot 1.png","img/tooltip bot check.png","img/tooltip bot.png","img/tooltip check.png","img/tooltip not accurate.png","img/tooltip surplus 2.png","img/tooltip surplus.png","img/total trading value.png","img/trade deficit and surplus.png","img/trade deficit.png","img/trade surplus.png","img/transparency.png","img/trend line.png","img/trend options.png","img/trend.png","img/ttv amend.png","img/TTV hide card.png","img/ttv size.png","img/TW.png","img/US deficit.png","img/US surplus.png","img/use full color range.png","img/zero line.png"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="dataviz-2_files/header-attrs-2.8/header-attrs.js"></script>
+  <script src="dataviz-2_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="dataviz-2_files/popper-2.6.0/popper.min.js"></script>
+  <link href="dataviz-2_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="dataviz-2_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="dataviz-2_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="dataviz-2_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="dataviz-2_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="dataviz-2_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="dataviz-2_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"DataViz Makeover 2","description":"Singapore's Balance of Merchandise Trade","authors":[{"author":"Ong Chee Hong","authorURL":"https://www.linkedin.com/in/alexongch/","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-06-18T00:00:00.000+08:00","citationText":"Hong, 2021"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>DataViz Makeover 2</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>Singapore’s Balance of Merchandise Trade</p></p>
+</div>
+
+<div class="d-byline">
+  Ong Chee Hong <a href="https://www.linkedin.com/in/alexongch/" class="uri">https://www.linkedin.com/in/alexongch/</a> 
+  
+<br/>06-18-2021
+</div>
+
+<div class="d-article">
+<h1 id="crtique-of-original-data-visualization">1.0 Crtique of Original Data Visualization</h1>
+<p><img src="img/Original%20visualization.jfif" /></p>
+<p>The above data visualisation is obtained from the Department of Statistics, Singapore, <a href="https://www.singstat.gov.sg/modules/infographics/singapore-international-trade">Singapore International Trade</a> website.</p>
+<h3 id="clarity">1.1 Clarity</h3>
+<table>
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Critique</th>
+<th>Suggestion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1) The chart only shows the 2020 net import and export value. It does not show the value per month which is of more importance to display whether there is growth or decline in trades by comparing with the preceding month. There is no control to allow readers to visualize the increase or decrease of trade between each country per month.</td>
+<td>A suggestion is to have a control panel to allow user to select the month &amp; year with added animation to visualize the growth or decline from the preceding month.</td>
+</tr>
+<tr class="even">
+<td>2) The chart does not accurately represent what was stated in the caption/sub-title.The caption stated that <strong>“Since 2009, the value of exports exceeds imports for Singapore’s merchandise trade with Mainland China.In comparison, the value of imports exceeds exports for Singapore’s trade with United States since 2006.”</strong> However, the chart shows the 2020 overall trade with Singapore instead of showing what was stated in the caption.</td>
+<td>Similar to the suggestion in 1), a control panel will allow readers to better visualize the amount of trade from month to month which will make more sense on the caption given.</td>
+</tr>
+<tr class="odd">
+<td>3) The white dot in the middle of each dot displayed in the chart requires the reader to read before understanding the rationale for it. Additionally, the white dot for those that falls near the x-y axis line will not give the readers a clear picture of whether the export is more than the import or vice versa since the dot covers the 45 degree reference line.</td>
+<td>A clearer chart by 1. removing the white dot, 2. making the dots more transparent and 3. making the line more visible by thickening the line will allow readers to instantly understand the chart.</td>
+</tr>
+<tr class="even">
+<td>4) The label for each country only displays the net amount for 2020. It does not display any other useful information such as balance of trade, %trade surplus/trade deficit.</td>
+<td>A suggesion is to deploy tooltip for every country displayed on the chart with useful information so that readers 1. do not need to reference to the scale to determine the value and 2. able to visualize more useful information.</td>
+</tr>
+<tr class="odd">
+<td>5) The overlapped markers make it difficult for readers to visualize the real size of the marker. Although the marker was highlighted when the cursor was moved onto it, it does not allow the reader to visualize instantly.Additionally, the 45 degree reference line was covered by the markers making it difficult for readers to visualize whether import is more than export or vice versa.</td>
+<td>A suggestion is create transparency on the markers to allow readers to better visualize the marker and also the 45 degree reference line.</td>
+</tr>
+<tr class="even">
+<td>6) The bottom import and export scale label does not reflect well on which scale is import and export.</td>
+<td>Both label should be in the middle of the scale to allow readers to clearly understand the meaning of each scale better</td>
+</tr>
+<tr class="odd">
+<td>7) The animation of the chart does only to move the marker at its own position making it zooming in and out a bit. This animation does not have any value.</td>
+<td>A suggestion will be to allow readers to click onto each marker and a tooltip can pop up to show the import and export value. Additionally, animation can help to reader to visualize the movement of the marker from one month to another month.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="aesthetic">1.2 Aesthetic</h3>
+<table>
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Critique</th>
+<th>Suggestion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1) The import and export symbol does not reflect well on the meaning of the symbol.</td>
+<td>A suggestion is to remove the symbol completely to avoid any confusion among the readers.</td>
+</tr>
+<tr class="even">
+<td>2) Some of the labels are covered by other labels or the markers which make it physically unpleasant looking.</td>
+<td>Labels should not be covered by the markers or another label to allow readers to visualize the label more pleasantly.</td>
+</tr>
+<tr class="odd">
+<td>3) BLue and green does not constrast well with each other.</td>
+<td>A suggestion is to use blue and red instead for colour contrast.</td>
+</tr>
+<tr class="even">
+<td>4) The label for China is out of the chart which makes it unpleasant for readers to visualize.</td>
+<td>A suggestion is to have all markers and labels located inside the chart.</td>
+</tr>
+<tr class="odd">
+<td>5) As there are too many variables of interest, the huge labels make the whole chart looks cluttered.</td>
+<td>A suggestion is to have smaller labels or incorporate a legend to make the chart less cluttered.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="proposed-data-visualisation-design">2.0 Proposed data visualisation design</h1>
+<p><img src="img/proposed%20visualisation.jpg" /></p>
+<ol type="1">
+<li>The proposed design incorporate a clean design with available filter and animation for better user experience and analysis. The proposed design seeks to allow the user to visualize</li>
+</ol>
+<p>1.1) the Total trading value of Singapore with regards to its Trade of Balance. The further the markers move beyond the reference line, the higher percentage of trade surplus or deficit from Singapore.</p>
+<p>1.2) The Balance of Trade in regards to trade surplus or deficit percentage. The further the markers are from the two zero lines, the higher the trade surplus or deficit. To have a sustainable economy, a country would like to acheive a darker blue which is as far away from the zero line as possible.</p>
+<p>1.3) The Import Vs Export where users are able to visualise the gradients between the import and export of a certain country. Similar to both 1.1 and 1.2, a country would like to achieve higher exports vs lower imports which will produce a dark blue line.</p>
+<h3 id="clarity-1">2.1 Clarity</h3>
+<table>
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Critique</th>
+<th>Proposed improvements</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1) The chart only shows the 2020 net import and export value. It does not show the value per month which is of more importance to display whether there is growth or decline in trades by comparing with the preceding month. There is no control to allow readers to visualize the increase or decrease of trade between each country per month.</td>
+<td>**The proposed visualisation incorporated a control panel where readers are able to choose the month year of interest and at the same time select the countries of interest.</td>
+</tr>
+<tr class="even">
+<td>2) The chart does not accurately represent what was stated in the caption/sub-title.The caption stated that <strong>“Since 2009, the value of exports exceeds imports for Singapore’s merchandise trade with Mainland China.In comparison, the value of imports exceeds exports for Singapore’s trade with United States since 2006.”</strong> However, the chart shows the 2020 overall trade with Singapore instead of showing what was stated in the caption.</td>
+<td><strong>Instead of having a caption, the control panel do a better job in allowing users to visualize what is represented in the chart.</strong></td>
+</tr>
+<tr class="odd">
+<td>3) The white dot in the middle of each dot displayed in the chart requires the reader to read before understanding the rationale for it. Additionally, the white dot for those that falls near the x-y axis line will not give the readers a clear picture of whether the export is more than the import or vice versa since the dot covers the 45 degree reference line.</td>
+<td><strong>The proposed visualisation incorporate a bold and thicker reference line. Additonally, the markers will be displayed with a certain transparency with borders to show the accurate position of the markers.</strong></td>
+</tr>
+<tr class="even">
+<td>4) The label for each country only displays the net amount for 2020. It does not display any other useful information such as balance of trade, %trade surplus/trade deficit.</td>
+<td><strong>Tooltip will be deployed with useful information such as balance of trade etc.</strong></td>
+</tr>
+<tr class="odd">
+<td>5) The overlapped markers make it difficult for readers to visualize the real size of the marker. Although the marker was highlighted when the cursor was moved onto it, it does not allow the reader to visualize instantly.Additionally, the 45 degree reference line was covered by the markers making it difficult for readers to visualize whether import is more than export or vice versa.</td>
+<td><strong>Same 3) suggestion, the markers will be filled with certain transparency and the 45 degree reference line will be thicken with darker colors.</strong></td>
+</tr>
+<tr class="even">
+<td>6) The bottom import and export scale label does not reflect well on which scale is import and export.</td>
+<td><strong>All labels will be situated in the middle of the axis.</strong></td>
+</tr>
+<tr class="odd">
+<td>7) The animation of the chart does only to move the marker at its own position making it zooming in and out a bit. This animation does not have any value.</td>
+<td><strong>Proper animation will be incorporated into the chart to allow users to see the movement of the markers when they switch from month to month and country to country.</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="aesthetic-1">2.1 Aesthetic</h3>
+<table>
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Critique</th>
+<th>Proposed Improvements</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1) The import and export symbol does not reflect well on the meaning of the symbol.</td>
+<td><strong>The proposed visualisation will not incorporate any symbols that does not reflect well on the meaning of the symbol.</strong></td>
+</tr>
+<tr class="even">
+<td>2) Some of the labels are covered by other labels or the markers which make it physically unpleasant looking.</td>
+<td><strong>Tooltip and smaller labels will be use instead of large physical labels.</strong></td>
+</tr>
+<tr class="odd">
+<td>3) Blue and green does not constrast well with each other.</td>
+<td><strong>Blue and Red will be use to differentiate between the markers</strong></td>
+</tr>
+<tr class="even">
+<td>4) The label for China is out of the chart which makes it unpleasant for readers to visualize.</td>
+<td><strong>All markers and labels will be within the chart.</strong></td>
+</tr>
+<tr class="odd">
+<td>5) As there are too many variables of interest, the huge labels make the whole chart looks cluttered.</td>
+<td><strong>The proposed design will make heavily make use of tooltips with possible small labels.</strong></td>
+</tr>
+</tbody>
+</table>
+<h1 id="data-visualisation">3.0 Data Visualisation</h1>
+<p>The completed data visualisation using tableau desktop can be accessed through <a href="https://public.tableau.com/app/profile/chee.hong/viz/SingaporeMerchandiseTradeJan2011-Dec2020/Dashboard1"><strong>here</strong></a>. Do note to select full screen to have better visibility of the chart.</p>
+<h1 id="step-by-step-data-visualisation-process">4.0 Step-by-step data visualisation process</h1>
+<h3 id="data-preparation">4.1 Data Preparation</h3>
+<ol type="1">
+<li>Download and open the excel file downloaded from the sub-section of <a href="https://www.singstat.gov.sg/find-data/search-by-theme/trade-and-investment/merchandise-trade/latest-data"><strong>Merchandise Trade by Region/Market</strong></a> provided by the Department of Statistic, Singapore (DOS).</li>
+</ol>
+<p><img src="img/Original%20dataset.png" /></p>
+<ol start="2" type="1">
+<li>Notice that the above excel sheet has the <strong>Subject, Topic and Title</strong> on the first three row which is not required in our dataset. As such, we will move the main datasets from row 6 up to the first row. Additionally, we will also rename the sheet “T1” to “Imports” and “T2” to “Exports”</li>
+</ol>
+<p><img src="img/Shifting%20of%20Dataset.png" /></p>
+<ol start="3" type="1">
+<li>Next, for better visibility, we will hide those months that are not required on the instruction and only show data from Jan 2011 to Dec 2020.</li>
+</ol>
+<p><img src="img/Hiding%20of%20Datasets.png" /></p>
+<p>4(a). If we give the datasets a look, we will be able to see that most of the countries are in <strong>Thousand Dollars</strong>. However, the region data <strong>as highlighted below</strong> is in <strong>Million Dollars</strong>.</p>
+<p><img src="img/Million%20Dollars.png" /></p>
+<p>4(b). As such, we will create six new rows (<strong>rows 122 to 137</strong> )at the bottom of the original datasets to modify the region data to <strong>Thousand Dollars</strong>. First, we will create a dummy number, <strong>1000</strong> at <strong>cell PF132</strong>. Next, at the first cell (<strong>row PF122</strong>) of the modified dataset, input the formula **PF3*$PF$132<strong>. Lastly, drag the formularize cell to the last cell </strong>cell TU127**</p>
+<p><img src="img/Thousand%20Dollars.png" /></p>
+<p>5(a). Next, notice that the number of the modified dataset is in text datatype. We will change the modified to number with commas in between to be consistent with the rest of the original data.</p>
+<p><img src="img/Change%20to%20currency.png" /></p>
+<p>5(b). The end result should look like the below image.</p>
+<p><img src="img/Modified%20Dataset.png" /></p>
+<ol start="6" type="1">
+<li><p>Repeat the same process for the <strong>Exports</strong> sheet and save the excel file to an appropriate name such as <strong>Singapore Merchandise Trade</strong>.</p></li>
+<li><p>Next, we will open up Tableau Prep Builder and connect to our data.</p></li>
+</ol>
+<p><img src="img/Tableau%20Prep.png" /></p>
+<ol start="8" type="1">
+<li>A panel should emerge. Click the Microsoft Excel on the connect panel and search and access the previously modified Excel file.</li>
+</ol>
+<p><img src="img/Connect%20to%20Excel.png" /></p>
+<ol start="9" type="1">
+<li>Once connected. The table pane will show up the sheets that was in the excel file. Drag the <strong>Imports</strong>sheet to the working diagram as shown.</li>
+</ol>
+<p><img src="img/Drag%20imports.png" /></p>
+<p>10(a). An imports panel should show up as shown below.</p>
+<p><img src="img/Imports%20panel.png" /></p>
+<p>10(b). Select out the months <strong>(Jan 2011 to Dec 2020)</strong> that was within the instructions given. Then click onto the <strong>Add a clean step</strong>.</p>
+<p><img src="img/Select%20months.png" /></p>
+<p>11(a). Next, the clean process panel should show up. Click onto the button <strong>(Show Data Grid)</strong> beside the search box as shown. Click on the highlighted top rows which is in <strong>Million Dollars</strong> by pressing Ctrl on your keyboard and click all the <strong>Million Dollars</strong> rows. Then, proceed to click the <strong>Exclude</strong> button as shown. This process should remove the rows from your dataset.</p>
+<p><img src="img/Exclude%20top%20rows.png" /></p>
+<p>11(b). Next, we will also exclude the bottom rows which include the information of the dataset by doing the same step as above.</p>
+<p><img src="img/Exclude%20bottom%20rows.png" /></p>
+<p>12(a). Next, we will change back to the <strong>Profile Pane</strong> by clicking on the button below. We will see that there are some na values. We should not exclude that as once we exclude the na values, the whole row will be removed. This will also removed other values within the row. Instead we will change it to <strong>0</strong> for all <strong>na values</strong>. However, to do that in Tableau Prep Builder, we will be required to change each individual field. To expedite the process, we will head back to our modified dataset in excel and replace the <strong>na values</strong> with <strong>0</strong>.</p>
+<p><img src="img/Change%20to%20original.png" /></p>
+<p><img src="img/na%20values.png" /></p>
+<p>12(b). To replace all <strong>na values</strong> to <strong>0</strong> in excel. We will need to select the <strong>Find &amp; Select</strong> under the <strong>Home</strong> tab. Next, we will need to replace the <strong>na values</strong> with <strong>0</strong> as shown below. All the <strong>na values</strong> should have change to <strong>0</strong>.</p>
+<p><img src="img/replace%20na.png" /></p>
+<ol start="13" type="1">
+<li>Next, we will head back to Tableau Prep Builder and refresh the modified data by clicking on the refresh button on the top of the page.</li>
+</ol>
+<p><img src="img/refresh.png" /></p>
+<p>14(a). Next, we will see that there are some extra spaces under the <strong>Variables</strong> field in our dataset as shown below.</p>
+<p><img src="img/Spaces.png" /></p>
+<p>14(b). We will remove those extra spaces by doing the following as shown below.</p>
+<p><img src="img/Remove%20extra%20spaces.png" /></p>
+<ol start="15" type="1">
+<li>Next, notice that there are two different total merchandise rows. One is Total Merchandise Imports(Thousand Dollars) the other is Total Merchandise Exports(Thousand Dollars). For us to be able to join this two rows successfully later in Tableau Desktop. We will remove the Imports and Exports from this two rows by renaming them into Total Merchandise Trade(Thousand Dollars).</li>
+</ol>
+<p><img src="img/edit%20total%20merchandise%20trade.png" /></p>
+<p>16(a). After we have completed the cleaning process. We will pivot our data.This process ensure that certain field is required to be transform from columns to rows for certain data visualization outcome.</p>
+<p><img src="img/pivot.png" /></p>
+<p>16(b). In our case, we want to change our month from columns into rows to ensure that each value is tag to each month from each country. Below is the process, we will drag all the months by clicking on the <strong>2011 Jan</strong> while holding <strong>shift</strong> and click again on <strong>2020 Dec</strong> and dragging it into the <strong>Pivoted Fields</strong> pane.</p>
+<p><img src="img/Pivot%20month.png" /></p>
+<p>17(a). Next, we will rename the fields after pivoting. The original are shown below.</p>
+<p><img src="img/Rename%20fields.png" /></p>
+<p>17(b). We will rename the <strong>“Pivot1 Names”</strong> and <strong>“Pivot1 Values”</strong> to <strong>“Year/Month”</strong> and <strong>“Import Values”</strong> respectively</p>
+<p><img src="img/renamed%20fields.png" /></p>
+<p>18(a). Lastly, we will export out our cleaned dataset to csv file. First, we will select the output button by clicking on the <strong>+</strong> button on the pivot block as shown below.</p>
+<p><img src="img/output.png" /></p>
+<p>18(b). Next, we will output our file as a csv file by the same selection below and click <strong>run flow</strong>.</p>
+<p><img src="img/export.png" /></p>
+<ol start="19" type="1">
+<li>We will do the same process for the <strong>“Exports”</strong> sheet. The whole preparation process should look like this below.</li>
+</ol>
+<p><img src="img/cleaning%20process.png" /></p>
+<h3 id="data-visualisation-process">4.2 Data Visualisation Process</h3>
+<ol type="1">
+<li>We will now open Tableau Desktop and connect our csv data by clicking the <strong>More…</strong> under the <strong>To a File</strong> tab.</li>
+</ol>
+<p><img src="img/connect%20to%20csv.png" /></p>
+<ol start="2" type="1">
+<li>Next, we will click on the <strong>Imports</strong> file that we have prepared. Tableau should automatically list the file onto the <strong>Logical Table</strong> pane as shown below.</li>
+</ol>
+<p><img src="img/importing%20import.png" /></p>
+<p>3(a). We will next drag the <strong>Exports</strong> file into the logical table as shown below.</p>
+<p><img src="img/Importing%20exports.png" /></p>
+<p>3(b). A <strong>Edit Relationship</strong> should pop up. Select both <strong>Variables</strong> and <strong>Variables (Exports.csv)</strong> and click <strong>close</strong>. Remember that we need to join Month/Year to fully connect both data together.</p>
+<p><img src="img/Join%201.png" /></p>
+<p>3(c). Next, we will select the <strong>Add more fields</strong> tab.</p>
+<p><img src="img/add%20more%20fields.png" /></p>
+<p>3(d). Lastly, we will select both <strong>Year/Month</strong> and <strong>Year/Month (Exports.csv)</strong> as shown below and click the <strong>x</strong> button on the top right of the pane.</p>
+<p><img src="img/Join%202.PNG" /></p>
+<p>4.Next, notice that the datatype for <strong>Year/Month</strong> is in the text form. Change it to the <strong>Date</strong> form by clicking on the datatype button as shown below.</p>
+<p><img src="img/change%20datatype.png" /></p>
+<ol start="5" type="1">
+<li>The <strong>Variables</strong> field is filled with <strong>Countries(Thousand Dollars)</strong>. As we only require the countries, we shal create a new field with only the countries in it by splitting. Click on the small downwards button on the top right of <strong>Variables</strong> and select split. A new field should show up.</li>
+</ol>
+<p><img src="img/split.png" /></p>
+<ol start="6" type="1">
+<li>Rename the split field to <strong>Country/Region</strong> by double clicking on the split field title.</li>
+</ol>
+<p><img src="img/rename%20split.png" /></p>
+<ol start="7" type="1">
+<li><p>Do the same for <strong>Exports</strong> sheet and rename the split field to <strong>Country/Regions</strong> as there cannot be two same field names from different sheets.</p></li>
+<li><p>Once, we have join our dataset. We will switch to <strong>Sheet 1</strong> by clicking on the tab below the screen.</p></li>
+</ol>
+<p><img src="img/sheet%201.png" /></p>
+<ol start="9" type="1">
+<li>Next, we will create a Total Merchandise Trade chart with certain details of Balance of Trade. First, we will drag the <strong>Export Values</strong> to the Columns and <strong>Import Values</strong> to the Rows as shown below.</li>
+</ol>
+<p><img src="img/drag%20exports%20and%20imports.png" /></p>
+<ol start="10" type="1">
+<li>Next, we will drag the <strong>Country/Regions</strong> to the <strong>Detail</strong> box under the <strong>Marks</strong> pane. This will shows all the countries and regions in the scatterplot.</li>
+</ol>
+<p><img src="img/drag%20country.png" /></p>
+<p>11(a). Next, we will create a <strong>Total Trading Value</strong> field by selecting the <strong>Create Calculated Field</strong> under the <strong>Analysis</strong> tab. This new field will add up both exports and imports value.</p>
+<p><img src="img/create%20calculated%20field.png" /></p>
+<p>11(b). Input the formula below to create the <strong>Total Trading Value</strong> field. <img src="img/total%20trading%20value.png" /></p>
+<ol start="12" type="1">
+<li>Next, we will create another new field called <strong>%Surplus/Deficit</strong>. This field will allow us to see the percentage surplus or deficit of a country on a certain period.</li>
+</ol>
+<p><img src="img/pct%20surplus%20&amp;%20deficit.png" /></p>
+<ol start="13" type="1">
+<li>After the field has been created. We will drag it to the <strong>Color</strong> box on the <strong>Marks</strong> pane. Tableau will then show colour representation of each country based on their <strong>%Surplus/Deficit</strong>.</li>
+</ol>
+<p><img src="img/drag%20pct.png" /></p>
+<ol start="14" type="1">
+<li>Next, we will select the circle symbol from the <strong>Marks</strong> pane to change the "“ring plot”" to scatterplot.</li>
+</ol>
+<p><img src="img/circle.png" /></p>
+<p>15(a). Next, we will see that there is a <strong>null</strong> notification at the bottom right of the chart. The reason for this is because there are more imports countries than exports countries. We are able to remove this by selecting <strong>All Records Match</strong> under the <strong>Edit Relationship</strong> in the <strong>Data Source</strong> panel as shown below. However, this will completely remove those countries that are in <strong>Imports</strong> sheet but not in <strong>Exports</strong> sheet which might lose useful information.</p>
+<p><img src="img/all%20records%20match.png" /></p>
+<p>15(b). As such, we will move all these null data to the default position of <strong>0</strong>.</p>
+<p><img src="img/null.png" /></p>
+<p>16(a). Next, we will drag the <strong>Country/Regions</strong> to the filter tab to allow user to select the ** Month Year** that they would like to visualize. For starters, we will select all the countries and regions <strong>(This can be deselected later depends on user input)</strong>.</p>
+<p><img src="img/country%20filter.png" /></p>
+<p>16(b). Once we have selected all the countries and regions. Click <strong>Apply</strong> and <strong>Ok</strong>. Next, we will click on the triangular button beside the Country/Regions tab under filter and click <strong>Show Filter</strong>. The filter should show up at the right side of the screen.</p>
+<p><img src="img/show%20filter.png" /></p>
+<p>17(a). Next, we will do the same for the Year/Month tab to allow user to select the month they want to visualize.</p>
+<p><img src="img/filter%20month.png" /></p>
+<p>17(b). This time round. There is no need to select all the month as we will be changing to single selection afterwards. We shall just click <strong>Apply</strong> and <strong>Ok</strong>.</p>
+<p><img src="img/select%20month%20apply.png" /></p>
+<p>17(c). Same as the previous filter. We will show the filter. Then click on the triangular button on the Year/Month filter and select **Single Value (slider). This will allow the user to slide to the month that they want or even by clicking left and right on the slider to switch to the previous or next month.</p>
+<p><img src="img/single%20selection.png" /></p>
+<p>18(a). Next, we will see that there is a color legend of the <strong>SUM(%Surplus/Deficit)</strong> below our filters. Click on the triangular button and select <strong>Edit Colors</strong>. We would like to modify our colours to distinguish between surplus and deficit markers.</p>
+<p><img src="img/select%20color.png" /></p>
+<p>18(b). To better distinguish between surplus and deficit, we will choose <strong>Red-Blue Diverging</strong> from the dropdown selection.</p>
+<p><img src="img/red%20blue%20diverging.png" /></p>
+<p>18(c). Next, select the <strong>Use Full Color Range</strong> option to allow tableau to use the most extreme red and blue in regardless of the difference in value.</p>
+<p><img src="img/use%20full%20color%20range.png" /></p>
+<ol start="19" type="1">
+<li>After we have selected. Head towards the <strong>Country/Regions</strong> and select the following countries. <strong>Japan, Republic of Korea, Mainland China, Malaysia, United States, Taiwan, Thailand and Indonesia</strong>. Selecting a few countries will allow us to see the visualisation better.</li>
+</ol>
+<p>20(a). Notice that the markers are small in size. We shall enlarge the markers by adjusting the <strong>Size</strong> option under the <strong>Marks</strong> pane.</p>
+<p><img src="img/size.png" /></p>
+<p>20(b). Next, notice that some of the markers border are not easily seen due to being covered by other markers. As such, we will colourise the border by selecting a light grey color to further distinguish the markers.</p>
+<p><img src="img/change%20border.png" /></p>
+<p>20(c). Next, we will change the transparency of the markers to further distinguish those markers being covered by other markers. The transparency of the markers will allow user to see the full circular markers.</p>
+<p><img src="img/transparency.png" /></p>
+<p>21(a). Next, we will see that on the <strong>%Surplus/Deficit</strong> colour legend on the bottom right of the page is in decimals. We will change that by going to the **SUM(%Surplus/Deficit) and select format by clicking on the triangular button. <img src="img/format.png" /></p>
+<ol start="22" type="1">
+<li>Switch to the <strong>Pane</strong> selection on the format panel. Under the Default section, change the Numbers to <strong>Percentage</strong> and select <strong>0 decimal place</strong>.</li>
+</ol>
+<p><img src="img/pct.png" /></p>
+<ol start="23" type="1">
+<li>Next, we will change the chart size from <strong>Standard</strong> to <strong>Entire View</strong> to visualize the chart better.</li>
+</ol>
+<p><img src="img/entire%20view.png" /></p>
+<ol start="24" type="1">
+<li>To distinguish between Surplus or Deficit Marker. We will incorporate a 45 degree reference line. To make a reference line, we will create a new calculated field named <strong>Reference Line</strong> and input the formula <strong>[Export Values]</strong></li>
+</ol>
+<p><img src="img/ref.png" /></p>
+<ol start="25" type="1">
+<li>Next, we will drag the newly created field to the <strong>Rows</strong> section. Notice that a new chart with diagonal markers has been created below the original chart.</li>
+</ol>
+<p><img src="img/drag%20ref.png" /></p>
+<ol start="26" type="1">
+<li>Next, we will perform a dual axis by clicking on the triangular button on the SUM(Reference Line) tab. This will ensure the diagonal markers is located with the original chart.</li>
+</ol>
+<p><img src="img/dual%20axis.png" /></p>
+<ol start="27" type="1">
+<li>Notice that both axis are not of equal scale. we will do a synchronisation of the axis. By right clicking on the reference line scale and select <strong>Synchronise Axis</strong>.</li>
+</ol>
+<p><img src="img/synchronise.png" /></p>
+<ol start="28" type="1">
+<li>Next, we will remove the scale by deselecting the <strong>Show Header</strong> on the reference line scale option.</li>
+</ol>
+<p><img src="img/show%20header.png" /></p>
+<ol start="29" type="1">
+<li>Afterwhich, we will head towards the <strong>SUM(Reference Line)</strong> section under the <strong>Marks</strong> pane and change the design of the chart to <strong>line</strong>. You will notice that tableau will try to line up the reference line markers diagonally.</li>
+</ol>
+<p><img src="img/line.png" /></p>
+<p>30(a). To make the dotted reference line, we will right click on the reference marker on the chart and select trend line.</p>
+<p><img src="img/trend.png" /></p>
+<p>30(b). A trend line should appear cutting diagonally along the chart.</p>
+<p><img src="img/trend%20line.png" /></p>
+<ol start="31" type="1">
+<li>Next, we will drag the <strong>Country/Regions</strong> to the <strong>Label</strong> under the <strong>SUM(Import Values)</strong> in the <strong>Marks</strong> pane to show each selected country as label.</li>
+</ol>
+<p><img src="img/country%20label.png" /></p>
+<ol start="32" type="1">
+<li>The label is in black color. To distinguish the label with the marker, we will right click on the Label box and under font, we will select <strong>Match Mark Color</strong>.</li>
+</ol>
+<p><img src="img/match%20mark%20color.png" /></p>
+<p>33(a). Once, we are done with the design of the <strong>Total Merchandise Trade</strong> chart. We will move to <strong>Sheet 2</strong>. The purpose of <strong>Sheet 2</strong> is to create a small <strong>Balance of Trade</strong> chart that will be incorporated into the <strong>Tooltip</strong> of the <strong>Total Merchandise Trade</strong> chart that we have previously developed.</p>
+<p>33(b). We will create a new calculated field for <strong>Balance of Trade</strong> by input the below formula.</p>
+<p><img src="img/sheet%202.png" /></p>
+<ol start="34" type="1">
+<li>Next, we will drag the <strong>Year/Month</strong> to Columns section and <strong>Balance of Trade</strong> to Rows section. A time-series line chart should show up.</li>
+</ol>
+<p><img src="img/balance%20of%20trade.png" /></p>
+<ol start="35" type="1">
+<li>Next, we will change the line chart to bar chart to make it easier to visualize in the tooltip.</li>
+</ol>
+<p><img src="img/bar.png" /></p>
+<p>36(a). To fit into the tooltip. We will need to make the chart smaller. We will adjust the chart to the left upper side of the chart while making sure that each bar is still visible.</p>
+<p>36(b). Next, notice that the whole year is not visible. As such, we will rotate the label.</p>
+<p><img src="img/rotate%20label.png" /></p>
+<p>36(c). To further reduce the size. We will remove the <strong>Year/Month</strong> field label by right clicking on the field label and select <strong>Hide Field Labels for Columns</strong>.</p>
+<p><img src="img/remove%20field%20label.png" /></p>
+<ol start="37" type="1">
+<li>Next, we will create a new field called <strong>Surplus or Deficit</strong>. This field will allow tableau to diffrentiate the difference between Surplus and Deficit. This will allow us to change the color of the bar chart later.</li>
+</ol>
+<p><img src="img/surplus%20or%20deficit.png" /></p>
+<p>38(a). Next, we will drag the newly created field to color. Tableau will diffrentiate Surplus and Deficit by colour.</p>
+<p><img src="img/drag%20surplus.png" /></p>
+<p>38(b). Notice, we are not able to change the colour for Deficit as there is no month and country selection. Tableau sum up all the trade numbers for each year.</p>
+<p><img src="img/surplus%20only.png" /></p>
+<p>38(c). As such, we will again drag the <strong>Country/Regions</strong> to the filter to allow us to select the country. We will select both <strong>Brazil and Brunei</strong> which show us both Surplus and Deficit numbers. Next, we will change the color of both Surplus and Deficit by clicking on the triangular button on the color legend.</p>
+<p><img src="img/select%20country.png" /></p>
+<p>38(d). Next, we will edit the colors. Click once on the <strong>Deficit</strong> and select a dark red colour by accessing red on the dragdown color palette. Do the same for <strong>Surplus</strong> by selecting a dark blue color.</p>
+<p><img src="img/edit%20colors.png" /></p>
+<ol start="39" type="1">
+<li>Once we have completed with the <strong>Balance of Trade</strong> chart, we will rename the chart by double clicking on the sheet tab below to <strong>Balance of Trade (By year)</strong>.</li>
+</ol>
+<p><img src="img/rename%20bot.png" /></p>
+<p>40(a). Next, we will switch back to <strong>Sheet 1</strong>. To create our tooltip, we will need a few new calculated fields. First, we will create both <strong>%Surplus</strong> and <strong>%Deficit</strong> new fields. This two fields are required to differentiate between positive percentage trade surplus and negative percentage trade deficit. Refer to both the formula below.</p>
+<p><img src="img/pct%20surplus.png" /></p>
+<p><img src="img/pct%20deficit.png" /></p>
+<p>40(b). Next, we will create another two fields for <strong>Surplus</strong> and <strong>Deficit</strong>. These two fields will allow Tableau to differentiate between Positive Balance of Trade and Negative Balance of Trade. Refer to the two formulas below.</p>
+<p><img src="img/surplus.png" /></p>
+<p><img src="img/deficit.png" /></p>
+<p>40(c). Lastly, we will crate two more fields to differentiate between the word <strong>Surplus</strong> and <strong>Deficit</strong>. Refer to the two formulas below.</p>
+<p><img src="img/surplus%20blue.png" /></p>
+<p><img src="img/deficit%20red.png" /></p>
+<ol start="41" type="1">
+<li>Next, we will drag the required fields into the tooltip as shown below.</li>
+</ol>
+<p><img src="img/drag%20tooltip.png" /></p>
+<ol start="42" type="1">
+<li>Thereafter, we will double click on the tooltip box and delete the whole default wordings. Then, we will input the following wordings as shown below. Note that the smaller font are in font 10 while the larger font are bold in font 14. The red and blue font is to allow tableau to differentiate between the two different fields. E.g. if the row is Surplus. The tooltip will only show the <strong>&lt;AGG(Surplus Blue)&gt;,&lt;AGG(Surplus)&gt;&gt; and &lt;&lt;SUM(%Surplus)&gt;&gt;</strong> in blue and vice versa for Deficit.</li>
+</ol>
+<p><img src="img/edit%20tooltip.PNG" /></p>
+<ol start="43" type="1">
+<li>Remember that we have created a Balance of Trade chart previously. We will incorporate the chart into our tooltip by clicking on the <strong>insert</strong> button on the top left of the tooltip pop up box. We will next click the <strong>Sheet</strong> and select <strong>Balance of Trade</strong>.</li>
+</ol>
+<p><img src="img/bot%20tooltip%201.png" /></p>
+<ol start="44" type="1">
+<li>A new line should be incorporated in the dialog box. We will change the default size of <strong>300</strong> to <strong>350</strong> to fit our bar chart into the tooltip.</li>
+</ol>
+<p><img src="img/bot%20tooltip.png" /></p>
+<ol start="45" type="1">
+<li>Next, we will edit both of our import and export axis by <strong>adding S$(’1000)</strong> to show the real representation of the chart.</li>
+</ol>
+<p><img src="img/edit%20axis.png" /></p>
+<ol start="46" type="1">
+<li>Under the <strong>Axis Titles</strong>. We shall add <strong>S$(’1000)</strong> to change the axis name. Do this for the export axis.</li>
+</ol>
+<p><img src="img/edit%20import%20axis.png" /></p>
+<p>47(a). Next, we will incorporate two annotations to show the upper triangle of the chart as <strong>Trade Deficit</strong> and lower triangle as <strong>Trade Surplus</strong>. To do this, we will need to right click on the chart and select <strong>Annotate</strong>.</p>
+<p><img src="img/annotate.png" /></p>
+<p>47(b). We shall add both <strong>Trade Surplus</strong> and <strong>Trade Deficit</strong> separately as shown below in our annotation dialog box.</p>
+<p><img src="img/trade%20surplus.png" /></p>
+<p><img src="img/trade%20deficit.png" /></p>
+<p>47(c). Next, we will move both the <strong>Trade Surplus</strong> and <strong>Trade Deficit</strong> to each end of the triangle as shown below.</p>
+<p><img src="img/trade%20deficit%20and%20surplus.png" /></p>
+<ol start="48" type="1">
+<li><p>Next, if we hover our mouse to one of the markers. The tooltip will show all the whole values which is in millions and the %Surplus/Deficit in decimals. This is an inaccurate representation of the markers. First, the markers should be in billion. Second, the value should be represented with a $xxB for easier reading rather than showing whole numbers. Lastly, the percentage should be in % not decimal. As such, we will need to modify and amend our chart.</p></li>
+<li><p>We will first create two new fields. These two fields will be named <strong>Export Values S<span class="math inline">\(B** and **Import Values S\)</span>B</strong>. Both fields will make use of the exisiting export and import values and mulitply each row by 1000 to show the accurate numbers.</p></li>
+</ol>
+<p><img src="img/export%20values%201000.png" /></p>
+<p><img src="img/import%20values%201000.png" /></p>
+<ol start="50" type="1">
+<li>Next, we will drag the newly created fields to replace the existing fields in the columns and rows section as shown below.</li>
+</ol>
+<p><img src="img/drag%20export%20import%201000.png" /></p>
+<ol start="51" type="1">
+<li>Next, we will amend some of the existing fields by clicking on the triangular button and select edit that were affected by the change in export and import values.</li>
+</ol>
+<p><img src="img/bot%20amend.png" /></p>
+<ol start="52" type="1">
+<li>First, we will amend the <strong>Balance of Trade</strong> field by changing both export and import values to the new fields.</li>
+</ol>
+<p><img src="img/bot%20amend%201.png" /></p>
+<ol start="53" type="1">
+<li>Next, we will also amend the Total Trading Value field.</li>
+</ol>
+<p><img src="img/ttv%20amend.png" /></p>
+<ol start="54" type="1">
+<li>Notice that the reference line has changed too as it is dependent on the export values. As such, we shall also amend the reference line formula by changing the former export value to the new field.</li>
+</ol>
+<p><img src="img/reference%20line.png" /></p>
+<ol start="55" type="1">
+<li>Next, we will also amend the tooltip to remove the <strong>SGD($)(’1000)</strong> since we have change the import and export values to billions.</li>
+</ol>
+<p><img src="img/new%20tooltip.png" /></p>
+<p>56(a). Next, we will drag the new import and export value fields to the tooltip and switch the existing import and export value to the new fields.</p>
+<p><img src="img/drag%20new%20export%20import.png" /></p>
+<p>56(b). We will double click on the tooltip box and switch the existing import and export value to the new fields. Additionally, we will remove the <strong>SGD($)(’1000)</strong>.</p>
+<p><img src="img/new%20tooltip%201.png" /></p>
+<ol start="56" type="1">
+<li>Thereafter, we will check the tooltip again. Notice that the value have change to billion. To ease the reader on reading the tooltip, we will format the tooltip by changing to $B and also change the %Surplus/Deficit to percentage.</li>
+</ol>
+<p><img src="img/tooltip%20check.png" /></p>
+<p>57(a). To format the tooltip, we will first click on the button on the <strong>SUM(Export Values S$B) tab under the </strong>Marks** pane.</p>
+<p><img src="img/export%201000.png" /></p>
+<p>57(b). Next, we will format the **SUM(Export Values S<span class="math inline">\(B)** by first clicking on the pane, then change the **default numbers** to **Currency(Custom)**. Thereafter, change the **Display Unit** to **Billions (B)**. Do the same for **SUM(Import Values S\)</span>B).</p>
+<p><img src="img/format%20export%201000.png" /></p>
+<p>57(c). Next, we will format <strong>AGG(Deficit)</strong>. As deficit is naturally a negative value. As such, we shall <strong>Negative values</strong> to <strong>-$1234</strong>. Similarly, we will change the <strong>Display Unit</strong> to <strong>Billions</strong>. Repeat the same process for <strong>AGG(Surplus)</strong> but no change will be needed for <strong>Negative Values</strong>.</p>
+<p><img src="img/format%20deficit.png" /></p>
+<p>57(d). Next, we will format <strong>SUM(%Deficit)</strong>. By changing the defualt numbers to <strong>Percentage</strong> and decimals to <strong>0 places</strong>. Repeat the same process for <strong>SUM(%Surplus)</strong>.</p>
+<p><img src="img/pct%20deficit%20format.png" /></p>
+<p>57(e). Lastly, we will format the <strong>ATTR(Year/Month)</strong> to the Month Year format so as to be consistent with the filter control.</p>
+<p><img src="img/format%20month%20year.png" /></p>
+<p>58(a). Next, we will change the axis label for both import and export values. To do this, we will need to right click on the <strong>Import Values S$B</strong> axis and click on <strong>Edit Axis</strong>.</p>
+<p><img src="img/change%20axis.png" /></p>
+<p>58(b). Next, the format panel will appear. Switch to the axis pane, and change the <strong>Scale Numbers</strong> to <strong>Number (Custom)</strong>. Change the <strong>Decimal Places</strong> to <strong>1</strong> and <strong>Display Units</strong> to <strong>Billions (B)</strong>. Repeat the same step for <strong>Export Values S$B</strong>.</p>
+<p><img src="img/format%20axis.png" /></p>
+<p>59(a). Next, we will double click on the trend line to edit the trend line. The purpose for this is to remove the tooltip that is associated with the trend line.</p>
+<p><img src="img/edit%20trend.png" /></p>
+<p>59(b). Next, a trend line options will emerge. <strong>Unselect</strong> <strong>Show tooltips</strong> and <strong>Show recalculated line for highlighted or selected data points</strong>.</p>
+<p><img src="img/trend%20options.png" /></p>
+<ol start="60" type="1">
+<li>And there you have it. The first sheet has been completed. Rename the sheet to <strong>Singapore Merchandise Trade, January 2011 - December 2020</strong>. <strong>Note that, the sheet name is not finalized</strong>.</li>
+</ol>
+<p><img src="img/singapore%20merchandise%20trade.png" /></p>
+<h3 id="balance-of-trade">Balance of Trade</h3>
+<ol start="61" type="1">
+<li>Next, we will start to create another sheet named <strong>Balance of Trade</strong>. This sheet is used to analyse the relationship between <strong>Balance of Trade</strong> and <strong>%Surplus/Deficit</strong>. We will drag the <strong>%Surplus/Deficit</strong> to the columns section and <strong>Balance of Trade</strong> to the rows section.</li>
+</ol>
+<p><img src="img/drag%20surplus%20and%20bot.png" /></p>
+<ol start="62" type="1">
+<li>Next, we will drag <strong>Country/Regions</strong> to detail box under <strong>Marks</strong> pane. A scatterplot will be formed based on countries and regions.</li>
+</ol>
+<p><img src="img/country%20detail.png" /></p>
+<ol start="63" type="1">
+<li>Next, notice that there are null values. Same as before, we will show the data at default position of 0. Note that there are two nulls to be place in default value of 0.</li>
+</ol>
+<p><img src="img/null%202.png" /></p>
+<ol start="64" type="1">
+<li>Next, we will place the <strong>Year/Month</strong> and <strong>Country/Regions</strong> tab on the filter in order to filter out the selected countries. Once we have done that, click the show filter for both tabs.</li>
+</ol>
+<p><img src="img/country%20year%20bot%20filter.png" /></p>
+<ol start="65" type="1">
+<li>Next, to sync selection of one sheet to be the same as another. We will switch to the <strong>Singapore Merchandise Trade, January 2011 - December 2020</strong> and click on the triangular button on the <strong>Country/Regions</strong> and <strong>Year/Month</strong> and go to <strong>Apply to Worksheets</strong> and select <strong>All Using This Data Source</strong>.</li>
+</ol>
+<p><img src="img/apply%20worksheets.png" /></p>
+<ol start="66" type="1">
+<li>We will then go back to <strong>Sheet 3</strong> after our filter selection. Next, we will change our chart design to <strong>circle</strong> to show the bubble plot.</li>
+</ol>
+<p><img src="img/circle%202.png" /></p>
+<ol start="67" type="1">
+<li>After which, we will drag the <strong>Total Trading Value</strong> to the <strong>Size</strong> box to let tableau display the size of the circle by total trading value.</li>
+</ol>
+<p><img src="img/ttv%20size.png" /></p>
+<ol start="68" type="1">
+<li>Next, drag the <strong>%Surplus/Deficit</strong> to the <strong>Color</strong> box and edit the colors by choosing the <strong>Red-Blue Diverging</strong> and click the <strong>Use Full Color Range</strong>.</li>
+</ol>
+<p><img src="img/red%20blue%20diverging%20bot.png" /></p>
+<ol start="69" type="1">
+<li>As the circle seems small. We will enlarge the size to the next size mark to make the markers more visible.</li>
+</ol>
+<p><img src="img/size%202.png" /></p>
+<ol start="70" type="1">
+<li>Next, we will label each marker with <strong>Country/Regions</strong> by dragging the <strong>Country/Regions</strong> to the <strong>Label</strong> box under the <strong>Marks</strong> pane.</li>
+</ol>
+<p><img src="img/country%20label%201.png" /></p>
+<ol start="71" type="1">
+<li>Next, we will drag the fields highlighted below to the tooltip. To allow us to format required fields later.</li>
+</ol>
+<p><img src="img/tooltip%20bot.png" /></p>
+<ol start="72" type="1">
+<li>We will delete the default wordings and type down the wordings as shown below. Note that the small font is font 10 while the bigger bold font are in font 14.</li>
+</ol>
+<p><img src="img/tooltip%20bot%201.png" /></p>
+<p>73(a). Same as before, we will format the fields in the tooltip. For <strong>AGG(Surplus)</strong> as shown below, we will change the <strong>Display Units</strong> to <strong>Billions (B)</strong>.</p>
+<p><img src="img/format%20surplus.png" /></p>
+<p>73(b). As for <strong>AGG(Deficit)</strong>. We will change the <strong>Negative Values</strong> to <strong>-$1234</strong> and <strong>Display Units</strong> to <strong>Billions (B)</strong>.</p>
+<p><img src="img/format%20deficit%20bot.png" /></p>
+<p>73(c). For <strong>SUM(%Surplus)</strong>. We will change the to percentage with the decimal places amend to <strong>0</strong>.</p>
+<p><img src="img/format%20pct%20surplus.png" /></p>
+<p>73(d). For <strong>ATTR(Year/Month)</strong>. We will change the date format to <strong>March 2001</strong> to be consistent with our filter control.</p>
+<p><img src="img/format%20month.png" /></p>
+<p>74(a). Next, we will change our <strong>Apply to Worksheets</strong> tab to selected worksheets. This is to prevent the <strong>Balance of Trade (By year)</strong> to be sync with the rest of the selection. The Balance of Trade (By year) purpose is to display the whole 10 years in the tooltip.</p>
+<p><img src="img/selected%20worksheets.png" /></p>
+<p>74(b). We will deselect the <strong>Balance of Trade (By year)</strong>.</p>
+<p><img src="img/deselect%20bot%20y%20on%20y.png" /></p>
+<ol start="75" type="1">
+<li>Once, we are done with the tooltip. We will edit the axis. Same as previously, we will right click on the Balance of Trade axis to edit axis. Remember to change to the <strong>Axis</strong> pane. Change the <strong>Scale Numbers</strong> to <strong>Currency (Custom)</strong> and the <strong>Decimal Places</strong> to <strong>1</strong>.</li>
+</ol>
+<p><img src="img/amend%20axis.png" /></p>
+<ol start="76" type="1">
+<li>Next, we will change the axis for %Surplus/Deficit to <strong>Percentage</strong> and change the <strong>Decimal Places</strong> to <strong>0</strong>.</li>
+</ol>
+<p><img src="img/amend%20surplus%20axis.png" /></p>
+<ol start="77" type="1">
+<li>Next, we will hide the card of the <strong>AGG(Total Trading Value)</strong> as there is no need to refer to the size of the marker. We can check the value via the tooltips.</li>
+</ol>
+<p><img src="img/TTV%20hide%20card.png" /></p>
+<ol start="78" type="1">
+<li>Same as before. We will adjust the transparency of the markers to 70% and select the grey color option for the border. This will make the markers more visible.</li>
+</ol>
+<p><img src="img/edit%20colors%20bot.png" /></p>
+<ol start="79" type="1">
+<li>Next, we will make the zero lines more visible. By right clicking on the chart and select format. Go to the Lines option under the <strong>Format Lines</strong> tab and thicken the zero lines and choose a darker grey color as shown below.</li>
+</ol>
+<p><img src="img/zero%20line.png" /></p>
+<ol start="80" type="1">
+<li><p>Lastly, Rename the sheet to <strong>Balance of Trade</strong> and we have completed the design for this sheet.</p></li>
+<li><p>We will next move to the last sheet. The purpose of the last sheet is to create a chart similar to the parallel coordinates plot to show the export and import value of a country via a line. First, we will drag the <strong>Measure Names</strong> and <strong>Measure Values</strong> to Columns and Rows respectively.</p></li>
+</ol>
+<p><img src="img/measure%20names.png" /></p>
+<ol start="82" type="1">
+<li>We will some of the fields in the <strong>Measure Values</strong> and retain only <strong>Export Values S<span class="math inline">\(B** and **Import Values S\)</span>B</strong></li>
+</ol>
+<p><img src="img/measure%20values.PNG" /></p>
+<ol start="83" type="1">
+<li>Next, we will drag the <strong>Country/Regions</strong> and <strong>Year/Month</strong> to the filter tab.</li>
+</ol>
+<p><img src="img/filter%20export%20import.png" /></p>
+<ol start="84" type="1">
+<li>We will switch back to the <strong>Singapore Merchandise Trade, January 2011 - December 2020</strong> and select <strong>Sheet 4</strong> to allow the usage of the same filter for selected worksheets.</li>
+</ol>
+<p><img src="img/selected%20worksheets%202.png" /></p>
+<ol start="85" type="1">
+<li>Next, we will drag the <strong>Country/Regions</strong> to detail and <strong>%Surplus/Deficit</strong> to color. This will show the selected countries in the chart and also differentiate them by their %surplus or % deficit value.</li>
+</ol>
+<p><img src="img/country%20surplus%20marks.png" /></p>
+<ol start="86" type="1">
+<li>Same as before. We will edit colors under the color legend to <strong>Red-Blue Diverging</strong> and select <strong>Use Full Color Range</strong>. This will allow the same colors to be use throughout the different sheets.</li>
+</ol>
+<p><img src="img/red%20blue%20diverging%20surplus.png" /></p>
+<ol start="87" type="1">
+<li>Next, we will drag the <strong>Country/Regions</strong> to label to label the countries in the chart.</li>
+</ol>
+<p><img src="img/country%20label%20surplus.png" /></p>
+<ol start="88" type="1">
+<li>Next, we will drag the fields as shown below into the tooltip.</li>
+</ol>
+<p><img src="img/tooltip%20surplus.png" /></p>
+<ol start="89" type="1">
+<li>We will change the tooltip wordings to the wordings as shown below to display useful information such as the export values and import values.</li>
+</ol>
+<p><img src="img/tooltip%20surplus%202.png" /></p>
+<ol start="90" type="1">
+<li>Next, we will format the axis by right clicking on the <strong>Value</strong> axis and change the <strong>Scale Numbers</strong> to <strong>Currency (Custom)</strong>, <strong>Decimal Places</strong> to <strong>1</strong> and <strong>Display Units</strong> to <strong>Billions (B)</strong>.</li>
+</ol>
+<p><img src="img/format%20measure%20values.png" /></p>
+<ol start="91" type="1">
+<li>Next, we will format the <strong>SUM(%Surplus/Deficit)</strong> to <strong>Percentage</strong> and <strong>Decimal Places</strong> to <strong>0</strong>.</li>
+</ol>
+<p><img src="img/format%20surplus%20deficit.png" /></p>
+<ol start="92" type="1">
+<li>Notice that the direction for export and import values are wrong. It should be blue when export values are higher than import value. To amend this, we shall change the position of the <strong>SUM(Export Values S<span class="math inline">\(B)** and **SUM(Import Values S\)</span>B)</strong> in the <strong>Measure Values</strong> pane.</li>
+</ol>
+<p><img src="img/switch%20import%20export.png" /></p>
+<ol start="93" type="1">
+<li>Next, we will rename the <strong>Import Values S<span class="math inline">\(B** and **Export Values S\)</span>B</strong> to <strong>Import</strong> and <strong>Export</strong> since the y-axis is already labelled as <strong>Values</strong>.</li>
+</ol>
+<p><img src="img/rename%20export%20import.png" /></p>
+<ol start="94" type="1">
+<li>Next, we will input the dots on the end of the line by clicking on the <strong>Color</strong> box and selecting the line with dots.</li>
+</ol>
+<p><img src="img/color%20marker.png" /></p>
+<ol start="95" type="1">
+<li>Lastly, we will change the size of the line to a bit larger to make the lines more visible. We will also rename the sheet name to <strong>Import &amp; Export (By Countries)</strong></li>
+</ol>
+<p><img src="img/size%20surplus.png" /></p>
+<h3 id="dashboard">Dashboard</h3>
+<ol start="96" type="1">
+<li>Now, we will combined all the charts together in a dashboard. We will open a new dashboard by clicking on the dashboard icon beside the new sheet tab. Next, we will change the <strong>Screen Size</strong> to <strong>Automatic</strong> to allow tableau to automatically fit the screen.</li>
+</ol>
+<p><img src="img/automatic.png" /></p>
+<ol start="97" type="1">
+<li>Next, we will move the sheets to its desired location as shown below. We will also rename the first sheet, <strong>Singapore Merchandise Trade, January 2011 - December 2020</strong> to <strong>Singapore Merchandise Trade, Jan 2011 - Dec 2020</strong> so that the title will not need to end on the second line.</li>
+</ol>
+<p><img src="img/sheets%20to%20dashboard.png" /></p>
+<ol start="98" type="1">
+<li>To allow interactivity where the user select one marker, the same marker from the other sheets will be highlighted as well. We will go to the <strong>Actions</strong> under the <strong>Worksheet</strong> tab.</li>
+</ol>
+<p><img src="img/actions.png" /></p>
+<ol start="99" type="1">
+<li>Under the <strong>Add Action</strong> tab, select <strong>Highlight</strong>.</li>
+</ol>
+<p><img src="img/Highlight.png" /></p>
+<ol start="100" type="1">
+<li>Next, under the <strong>Source Sheets</strong> and <strong>Target Sheets</strong>, select <strong>Dashboard 1</strong> for both options to allow all sheets to interact with each other.</li>
+</ol>
+<p><img src="img/highlight%20dashboard.png" /></p>
+<ol start="101" type="1">
+<li>Next, we will rename the first sheet to allow the month to change based on the user selection.</li>
+</ol>
+<p><img src="img/rename%20singapore%20merchandise%20trade.png" /></p>
+<ol start="102" type="1">
+<li>We will do the same for both <strong>Balance of Trade</strong> and <strong>Import &amp; Export (By Country)</strong>. For <strong>Import and Export (By Country)</strong>, we will additionally add a SG on the front and remove (By Country) at the back.</li>
+</ol>
+<p><img src="img/rename%20bot%20year.png" /></p>
+<p><img src="img/rename%20import%20export.png" /></p>
+<ol start="103" type="1">
+<li>Next, we will add a caption below the dashboard. First, we will select the text object and drag it to the middle bottom of the chart until the bottom portion is shaded.</li>
+</ol>
+<p><img src="img/caption%20object.png" /></p>
+<ol start="104" type="1">
+<li>A dialog box will pop up. We will type down the source and dataset in the caption.</li>
+</ol>
+<p><img src="img/caption%20dialog%20box.png" /></p>
+<ol start="105" type="1">
+<li>Next, we will drag the text object all the way down to the bottom of the page.</li>
+</ol>
+<p><img src="img/caption%20bottom%20page.png" /></p>
+<ol start="106" type="1">
+<li>Next, we will incorporate <strong>Animations</strong> to the chart so that users can see the movement of the markers more fluidly and interactively.</li>
+</ol>
+<p><img src="img/Animations.png" /></p>
+<ol start="107" type="1">
+<li>On the Animations pane. We will select <strong>On</strong> and also change the <strong>Duration</strong> to <strong>1.00 seconds</strong> to make the movement time just right.</li>
+</ol>
+<p><img src="img/animation%20duration.png" /></p>
+<ol start="108" type="1">
+<li>Lastly, we will incorporate a dashboard name. Select the <strong>Show Dashboard Title</strong> at the bottom left of the screen and type <strong>Singapore Merchandise Trade, Janurary 2011 - December 2020</strong> with bold letters.</li>
+</ol>
+<p><img src="img/dashboard%20name.png" /></p>
+<ol start="109" type="1">
+<li>Lastly, we will remove the <strong>%Surplus/Deficit</strong> of the color legend and enlarge the <strong>Country/Regions</strong> selection a bit to allow more visibility of the countries.</li>
+</ol>
+<p><img src="img/enlarge%20country.png" /></p>
+<ol start="110" type="1">
+<li>The dashboard will be publish in Tableau Public. Usually, there will be some differences between Tableau Desktop and Tableau Public. In our case, the markers are too big as shown below.</li>
+</ol>
+<p><img src="img/tableau%20public.png" /></p>
+<ol start="111" type="1">
+<li>As such, we will minimize the size for both the <strong>Singapore Merchandise Trade</strong> and <strong>Balance of Trade</strong></li>
+</ol>
+<p><img src="img/minimize%20size%201.png" /></p>
+<p><img src="img/minimize%20size%202.png" /></p>
+<ol start="112" type="1">
+<li>The finalized visualisation will looks like this in Tableau Public. Access the link [here] (<a href="https://public.tableau.com/app/profile/chee.hong/viz/SingaporeMerchandiseTradeJan2011-Dec2020/Dashboard1" class="uri">https://public.tableau.com/app/profile/chee.hong/viz/SingaporeMerchandiseTradeJan2011-Dec2020/Dashboard1</a>)</li>
+</ol>
+<p><img src="img/final%20product.png" /></p>
+<h1 id="observations-from-the-data-visualisation">5.0 Observations from the data visualisation</h1>
+<ol type="1">
+<li>Singapore’s Balance of Trade with Indonesia has been decreasing from year of 2011 to 2020. In 2011, the Balance of Trade exceeded S$30B. In October 2011, the Balance of Trade hit a record 172% trade surplus. However, the Balance of Trade has been decreasing to around S$10B in 2020 possibly due to the impact of Covid-19. This is with an exception of 2018 where there is an increase in Balance of Trade between Indonesia to around S$23B. However, Indonesia remains among one of the highest trade partners of Singapore in terms of Balance of Trade.</li>
+</ol>
+<p><img src="img/Indonesia%202011.png" /></p>
+<ol start="2" type="1">
+<li>In contrast, Singapore’s Balance of Trade with United States although has been in the red from 2011 to 2019 with the lowest %deficit of -56% recorded in November 2011. The Balance of trade has been increasing slowly where it reaches a positive Balance of Trade of around S$5B in 2020 from a low of around -S$22B in 2011, 2012 and 2014. In 2020, the highest recorded Balance of Trade with the US is S$2.12B which represented 56% of trade surplus. See below two images for more info.</li>
+</ol>
+<p><img src="img/US%20deficit.png" /></p>
+<p><img src="img/US%20surplus.png" /></p>
+<p>3)Singapore’s trade with Taiwan has seen an increase in Trade Deficit from 2011 of around S$9B to 2020 of around S$24B. Singapore has not experience any Trade Surplus from trade with Taiwan within this 10 years. The largest percentage deficit recorded for trade with Taiwan is on May 2019 where the Balance of Trade is -S$2.36B which resulted in a 60% of trade deficit. Although Singapore balance of trade with taiwan has been increasing. There is a decrease from 2015 to 2016 where it starts to increase again in 2017.</p>
+<p><img src="img/TW.png" /></p>
+<p>4(a) Singapore’s balance of trade with Malaysia has been decreasing since 2011 of S$14B to 2020 -$12B. Singapore experience a trade surplus from 2011 to 2018 where this has since change to trade deficit from 2019 to 2020. The interesting to note is from 2019 to 2020. There is a sharp increase of 1100% in trade deficit, from S-$1B to S$12B. This might be due to increase imports for daily necessities from Malaysia during the COVID-19 period whereas export to Malaysia has since slow down due to the border restrictions between the two countries.</p>
+<p>4(b) The lowest trade deficit with Malaysia is in June 2020 where there is a -S$1.58B of trade deficit which accounted to a 30% of deficit</p>
+<p><img src="img/Malaysia%20deficit.png" /></p>
+<ol start="5" type="1">
+<li>Singapore’s trade with Thailand has seen an increase since 2011 to 2019. However, there is a sharp drop in 2020. This sharp drop might be due to COVID-19 situation where factory output might have an impact to the trade from both side. The highest trade surplus percentage was recorded in November 2019 where there is a 182% surplus which amounted to $1.35B.</li>
+</ol>
+<p><img src="img/thai.png" /></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
