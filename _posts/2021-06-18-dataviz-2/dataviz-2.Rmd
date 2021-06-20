@@ -200,7 +200,7 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 ![](img/cleaning process.png)
 
 
-### 4.2 Data Visualisation Process
+### 4.2 Further Data Preparation in Tableau Desktop
 
 1. We will now open Tableau Desktop and connect our csv data by clicking the **More...** under the **To a File** tab.
 
@@ -244,7 +244,7 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 
 ![](img/sheet 1.png)
 
-### 4.2 Singapore Merchandise Trade
+### 4.3 Singapore Merchandise Trade
 
 9. Next, we will create a **Total Merchandise Trade** chart with certain details of Balance of Trade. First, we will drag the **Export Values** to the Columns and **Import Values** to the Rows as shown below.
 
@@ -574,7 +574,7 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 ![](img/singapore merchandise trade.png)
 
 
-### 4.3 Balance of Trade
+### 4.4 Balance of Trade
 
 61. Next, we will start to create another sheet named **Balance of Trade**. This sheet is used to analyse the relationship between **Balance of Trade** and **%Surplus/Deficit**. We will drag the **%Surplus/Deficit** to the columns section and **Balance of Trade** to the rows section.
 
@@ -670,7 +670,7 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 
 80. Lastly, Rename the sheet to **Balance of Trade** and we have completed the design for this sheet.
 
-### 4.4. SG Import & Export
+### 4.5 SG Import & Export
 
 81. We will next move to the last sheet. The purpose of the last sheet is to create a chart similar to the parallel coordinates plot to show the export and import value of a country via a line. First, we will drag the **Measure Names** and **Measure Values** to Columns and Rows respectively.
 
@@ -732,7 +732,7 @@ Next, at the first cell (**row PF122**) of the modified dataset, input the formu
 
 ![](img/size surplus.png)
 
-### Dashboard
+### 4.6 Dashboard
 
 96. Now, we will combined all the charts together in a dashboard. We will open a new dashboard by clicking on the dashboard icon beside the new sheet tab. Next, we will change the **Screen Size** to **Automatic** to allow tableau to automatically fit the screen.
 
