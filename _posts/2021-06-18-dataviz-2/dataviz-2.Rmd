@@ -67,7 +67,7 @@ Critique|Proposed improvements
 6) The bottom import and export scale label does not reflect well on which scale is import and export. | **All labels will be situated in the middle of the axis to allow user to visualise more easily.**
 7) The animation of the chart does only to move the marker at its own position making it zooming in and out a bit. This animation does not have any value.| **Proper animation will be incorporated into the chart to allow users to see the movement of the markers when they switch from month to month and country to country.**
 
-### 2.1 Aesthetic
+### 2.2 Aesthetic
 Critique|Proposed Improvements
 ----------|-----------
 1) The import and export symbol does not reflect well on the meaning of the symbol. | **The proposed visualisation will not incorporate any symbols that does not reflect well on the meaning of the symbol.**
