@@ -12,7 +12,12 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo = TRUE,
+                      eval = TRUE,
+                      fig.retina = 3,
+                      message = FALSE,
+                      warning = FALSE)
 ```
 
 # Vast Challenge 2021: Mini-Challenge 2
@@ -42,7 +47,7 @@ As a visual analytics expert assisting law enforcement, your mission is to ident
 
 6.	If you solved this mini-challenge in 2014, how did you approach it differently this year?
 
-# Installing required R pacakages
+# Installing required R packages
 ```{r}
 packages = c('DT','ggiraph','plotly','tidyverse', 'raster','sf','clock','tmap', 'rgdal','dplyr', 'tidyr', 'textclean', "plotly", "forcats")
 for(p in packages){
@@ -119,14 +124,15 @@ This year Vast Challenge uses the same question based on 2014 Vast Challenge. As
 #Importing of data
 
 ```{r}
-vehicle <- read_csv("data/mc2/car-assignments.csv")
+car <- read_csv("data/mc2/car-assignments.csv")
 cc <- read_csv("data/mc2/cc_data.csv", locale = locale(encoding = "ASCII"))
 gps <- read_csv("data/mc2/gps.csv")
-loyalty <- read_csv("data/mc2/loyalty_data.csv")
+loyalty <- read_csv("data/mc2/loyalty_data.csv",locale = locale(encoding = "ASCII"))
 ```
 
 ```{r}
-guess_encoding(cc)
+#guess_encoding(cc)
+guess_encoding(loyalty)
 ```
 
 #Answers
@@ -196,6 +202,9 @@ loyalty_dt <- rename(loyalty, date = timestamp)
 glimpse(cc_dtsplit)
 glimpse(loyalty_dt)
 ```
+By taking a look at both the cc and loyalty card dataset, we can see that cc dataset has more rows than the loyalty card dataset. A postulation for this anomaly might be that 1) some of the purchases are not in the form of credit cards another 2) is that some of the purchases uses credit card but loyalty card was not produced.
+
+
 making time into groups of 15 min - optional
 ```{r}
 #cc_modified <- cc_recode %>%
@@ -203,7 +212,7 @@ making time into groups of 15 min - optional
 
 ```
 
-
+To further examine the anomaly, we will first inner join both the cc and loyalty card data by using the date, location and price column to find the identity of the cc and loyalty card.
 
 inner join
 ```{r}
@@ -212,7 +221,8 @@ cc_loyalty_join <- cc_dtsplit %>%
 
 cc_loyalty_join
 ```
-Notice that after we have inner join both the cleaned dataset. There is only 932 rows while the orignal cc_dtsplit and has 1490 and loyalty_dt has 1392. This anomalies suggested that some of the people that uses their credit card did not use their loyalty card during purchases.
+
+After joining the dataset, we found that there are 1087 rows of data available. This means that some of the credit card purchases are not linked to any of the loyalty card, vice versa, some of the loyalty card are not linked to the credit card purchases. These strengthen the anomaly we have highlighted before.
 
 
 Before we begin further analysis on further anomalies between the two datasets. We shall conduct some exploratory data analysis. First, we will analyse the most popular place visited during the duration of study.
@@ -238,7 +248,7 @@ cc_join <- cc_loyalty_join %>%
 cc_join
 ```
 
-From the chart above, we can observe that "Guy's Gyros", "Hippokampos", "Brew've Been Serve" have the most vistitation during the period of study.
+From the chart above, we can observe that "Katerine"s Cafe" (155 counts), "Guy's Gyros" (121 counts), "Hippokampos" (117 counts), "Brew've Been Serve" (111 counts) have the most visitation during the period of study.
 
 
 
@@ -262,14 +272,17 @@ cc_loyalty_day <- cc_loyalty_join %>%
 cc_loyalty_day
 ```
 ```{r}
-cc_loyalty_day %>%
+cc_day <- cc_loyalty_day %>%
   filter(count >=5) %>%
-  plot_ly(x = ~daytime, y = ~count, color = ~location) %>%
+  plot_ly(x = ~daytime, y = ~count, color = ~location, hoverinfo = "text", text = ~paste("Location:", location, "<br>","Day Time:", daytime, "<br>", "No.of visitors:", count)) %>%
   add_bars() %>%
   layout (title = "Total counts of visitors by day and time", xaxis = list(title = "", size = 3, dtick = ~daytime), yaxis = list(title = "Number of visitors") )
 
+cc_day
+
 ```
 
+Based on the joined data between cc and 
 
 ```{r}
 cc_loyalty_top4 <- cc_loyalty_group %>%
@@ -287,12 +300,14 @@ cc_loyalty_filter
 ```
 
 ```{r}
-cc_loyalty_top4 %>%
+cc_timeseries <- cc_loyalty_top4 %>%
   plot_ly(x = ~date, y =~count, color = ~location, hoverinfo = "text",
           text = ~paste("Location:", location, "<br>","Date:", date, "<br>","Time:", time, "<br>", "Day:", day)) %>%
   add_lines() %>%
   add_markers(showlegend = FALSE) %>%
-  layout(title = "Most frequented places by groups of people", xaxis = list(title = "", dtick = ~day), yaxis = list(title = "Number of people"))
+  layout(title = "Most frequented places by groups of people", xaxis = list(title = "", dtick = ~date, showgrid = FALSE), yaxis = list(title = "Number of people"))
+
+cc_timeseries
 ```
 
 anti_join
@@ -300,8 +315,9 @@ anti_join
 cc_loyalty_antijoin <- cc_dtsplit %>%
   anti_join(loyalty_dt, by = c("date","location", "price"))
 
-cc_loyalty_join
+cc_loyalty_antijoin
 ```
+
 
 ```{r}
 cc_anti <- cc_loyalty_antijoin %>%
@@ -309,15 +325,11 @@ cc_anti <- cc_loyalty_antijoin %>%
   mutate(location = fct_reorder(location, n, .desc =TRUE)) %>%
   plot_ly(x = ~location, y = ~n, marker = list(color = ~n)) %>%
   add_bars(name = "anti-join") %>%
-  layout(title = "Total number of visitation by area", xaxis = list(title = ""),yaxis = list(title = "Number of visitors"))
+  layout(title = "Total number of visitation by area", xaxis = list(title = "", automargin = TRUE),yaxis = list(title = "Number of visitors", automargin = TRUE))
 
 cc_anti
 ```
 
-```{r}
-subplot(cc_join, cc_anti, nrows = 1, shareX = TRUE, shareY = TRUE)
-
-```
 
 ```{r}
 cc_loyalty_day_anti <- cc_loyalty_antijoin %>%
@@ -330,13 +342,42 @@ cc_loyalty_day_anti
 ```
 
 ```{r}
-cc_loyalty_day_anti %>%
+cc_anti_day <- cc_loyalty_day_anti %>%
   filter(count >=3) %>%
-  plot_ly(x = ~daytime, y = ~count, color = ~location) %>%
+  plot_ly(x = ~daytime, y = ~count, color = ~location, hoverinfo = "text", text = ~paste("Location:", location, "<br>","Day Time:", daytime, "<br>", "No.of visitors:", count)) %>%
   add_bars() %>%
-  layout (title = "Total counts of visitors by day and time", xaxis = list(title = "", size = 3, dtick = ~daytime), yaxis = list(title = "Number of visitors") )
+  layout (title = "Total counts of visitors by day and time", xaxis = list(title = "", size = 3, dtick = ~daytime), automargin = TRUE, yaxis = list(title = "Number of visitors"))
+
+cc_anti_day
 
 ```
+
+
+```{r}
+cc_loyalty_anti_group <- cc_loyalty_antijoin %>%
+  group_by(location, date,time,day) %>%
+  summarize(count = n()) %>%
+  ungroup()
+
+
+```
+
+
+
+
+```{r}
+ cc_anti_timeseries <- cc_loyalty_anti_group %>%
+  filter(count >= 2) %>%
+  plot_ly(x = ~date, y =~count, color = ~location, hoverinfo = "text",
+          text = ~paste("Location:", location, "<br>","Date:", date, "<br>","Time:", time, "<br>", "Day:", day)) %>%
+  add_lines() %>%
+  add_markers(showlegend = FALSE) %>%
+  layout(title = "Most frequented places by groups of people", xaxis = list(title = "", dtick = ~date, showgrid = FALSE), yaxis = list(title = "Number of people"))
+
+cc_anti_timeseries
+```
+
+
 
 ```{r}
 cc_loyalty_anti_group <- cc_loyalty_antijoin %>%
@@ -348,12 +389,283 @@ cc_loyalty_anti_group <- cc_loyalty_antijoin %>%
 cc_loyalty_anti_group
 ```
 
+
 ```{r}
-cc_loyalty_anti_group %>%
-  filter(count >= 2) %>%
+subplot(cc_day, cc_anti_day, nrows = 1, shareY = TRUE)
+
+```
+#right anti join. loyalty anti join cc
+```{r}
+cc_loyalty_antijoin_right <- loyalty_dt%>%
+  anti_join(cc_dtsplit, by = c("date","location", "price")) %>%
+  ungroup()
+
+cc_loyalty_antijoin_mutate <- cc_loyalty_antijoin_right %>%
+  mutate(day = date_weekday_factor(cc_loyalty_antijoin_right$date))
+
+cc_loyalty_antijoin_mutate
+```
+
+```{r}
+cc_anti_right <- cc_loyalty_antijoin_mutate %>%
+  count(location) %>%
+  mutate(location = fct_reorder(location, n, .desc =TRUE)) %>%
+  plot_ly(x = ~location, y = ~n, marker = list(color = ~n)) %>%
+  add_bars(name = "anti-join-right") %>%
+  layout(title = "Total number of visitation by area", xaxis = list(title = "", automargin = TRUE),yaxis = list(title = "Number of visitors", automargin = TRUE))
+
+cc_anti_right
+```
+
+```{r}
+cc_loyalty_day_anti_right <- cc_loyalty_antijoin_mutate %>%
+  group_by(location, date,day) %>%
+  summarize(count = n()) %>%
+  arrange(desc(count)) %>%
+  ungroup()
+
+cc_loyalty_day_anti_right
+```
+
+```{r}
+cc_anti_day_right <- cc_loyalty_day_anti_right %>%
+  unite(col = "daydate", day, date, sep = " ", remove = FALSE) %>%
+  filter(count >=4) %>%
+  plot_ly(x = ~daydate, y = ~count, color = ~location, hoverinfo = "text", text = ~paste("Location:", location, "<br>","DayDate:", daydate, "<br>", "No.of visitors:", count)) %>%
+  add_bars() %>%
+  layout (title = "Total counts of visitors by date", xaxis = list(title = "", size = 3, dtick = ~daydate), automargin = TRUE, yaxis = list(title = "Number of visitors"))
+
+cc_anti_day_right
+
+```
+
+Notice that we are only able to get the date and not the time when an anti join was perform from loyalty data to cc data due to the fact that loyalty dataset do not have time in its timestamp column.
+
+
+
+```{r}
+subplot(cc_join, cc_anti, cc_anti_right, nrows = 1, shareX = TRUE, shareY = TRUE)
+
+```
+
+
+
+```{r}
+ cc_anti_timeseries_right <- cc_loyalty_day_anti_right %>%
+  filter(count >= 4) %>%
   plot_ly(x = ~date, y =~count, color = ~location, hoverinfo = "text",
-          text = ~paste("Location:", location, "<br>","Date:", date, "<br>","Time:", time, "<br>", "Day:", day)) %>%
+          text = ~paste("Location:", location, "<br>","Date:", date, "<br>", "<br>", "Day:", day)) %>%
   add_lines() %>%
   add_markers(showlegend = FALSE) %>%
-  layout(title = "Most frequented places by groups of people", xaxis = list(title = "", dtick = ~date), yaxis = list(title = "Number of people"))
+  layout(title = "Most frequented places by groups of people", xaxis = list(title = "", dtick = ~date, showgrid = FALSE), yaxis = list(title = "Number of people"))
+
+cc_anti_timeseries_right
 ```
+
+
+```{r}
+subplot(cc_timeseries, cc_anti_timeseries, cc_anti_timeseries_right, nrows = 3, shareX = TRUE, shareY = TRUE)
+```
+
+### Analysis
+
+
+
+# Answer 2
+
+###2.	Add the vehicle data to your analysis of the credit and loyalty card data. How does your assessment of the anomalies in question 1 change based on this new data? What discrepancies between vehicle, credit, and loyalty card data do you find? Please limit your answer to 8 images and 500 words.
+
+
+
+#### Examine vehicle data
+
+We will examine the two vehicle related data. Gps and car-assignments data.
+
+The car-assignment data with a total of 44 rows consists of the name and appointment of the employee tag to a CarID. 
+
+The GPS data with a total of 685169 rows consists of the id of the car and its movement based on latitude and longitude with timestamp.
+```{r}
+glimpse(car)
+glimpse(gps)
+
+```
+
+
+
+### Combine  
+
+As it will be better to combine both names together into one column, we will combine both the lastname and firstname columns into name.
+```{r}
+car_unite <- car %>%
+  unite(col = "name", LastName,FirstName, sep = ", ",  remove =FALSE) 
+
+as.factor(car_unite$CarID)
+
+car_unite
+```
+
+### rename id into CarID anf change timestamp to dttm format
+
+Next, we will rename the "Timestamp" column in the gps data to "timestamp" to match with the car_assignment data. At the same time, we will also change the id to CarID to match with the car_assignment data.
+
+Lastly, we will also change the timestamp datatype to dttm.
+```{r}
+gps_rename_time <- rename(gps, timestamp= Timestamp)
+gps_rename <- rename(gps_rename_time, CarID = id)
+
+gps_rename$timestamp <- date_time_parse(gps_rename$timestamp,
+                                 zone = "",
+                                 format = "%m/%d/%Y %H:%M")
+
+
+```
+
+
+### inner join gps to car-assignment
+
+In order for us to match the car assignment person to the gps data. We will inner join the data.
+
+Notice that there is only a total of 613077 dataset. This shows that some of the vehicles recorded are not part of the car_assignment data. I.e. vehicles apart from the car assignees has been tracked too. 
+```{r}
+gps_car <- gps_rename %>%
+  inner_join(car_unite, by = "CarID") %>%
+  arrange(timestamp)
+
+gps_car
+
+```
+
+
+If we look at the above data, we can see that during one minute, the gps data varies a lot. This tell us that during one minute, the car moves around quite a fair bit.
+
+
+Next, we will anti join both the car and gps datasets to sieve out those vehicle movement that are not part of the car assignees data.
+
+```{r}
+gps_car_anti <- gps_rename %>%
+  anti_join(car_unite, by = "CarID")
+
+gps_car_anti
+```
+
+Taking a look at the above data. You will notice that the CarID starts from 101 to 107 which are not part of the id that were assigned to the respective employees. 
+
+Going back to the background of this assignment. We will observe that GAStech do provide trucks for official business use. As such, we will assume that those vehicle with CarID of 101 to 107 are trucks. 
+
+These trucks will later be used for examination to see if they were used for personal used.
+
+### revisit cc_loyalty_join
+```{r}
+cc_loyalty_join %>%
+  arrange(timestamp)
+```
+
+
+If we take a look at both the joined dataset of gps_car and cc_loyalty_join data, we will observe that the gps_car data starts at 2014-01-06, 06:28 whike the cc_loyalty_join starts at 2014_01_06, 07:28. A difference of an hour. We will observe the 1 hr difference in the later part of our study.
+
+
+
+```{r}
+tail(gps_car,6)
+
+
+```
+
+```{r}
+tail(cc_loyalty_join, 6)
+
+```
+
+Next, we will take a look at the last few rows of both joined dataset. We will see that the gps data ends at 2014-01-19, 20:56:00 while the cc_loyalty data stops at 2014-01-19, 20:51:00. There is a difference of 6 mins.
+
+Now, we will filter out those data before 2014-01-06 07:28:00 to take a look at the CarID
+
+```{r}
+gps_car_filter <- gps_car %>%
+  filter(timestamp < "2014-01-06 07:00:00")
+
+gps_car_filter
+```
+
+
+```{r}
+gps_car_group <- gps_car_filter %>%
+  group_by(timestamp, CarID) %>%
+  summarize(count = n()) %>%
+  ungroup() 
+```
+
+```{r}
+gps_car_group %>%
+  plot_ly(x = ~timestamp, y = ~count, color = ~as.factor(CarID)) %>%
+  add_bars %>%
+  layout(xaxis = list(title  = ""))
+
+```
+
+### filter for timestamp 07:01:00 to 07:10:00
+```{r}
+gps_car_filter2 <- gps_car %>%
+  filter(timestamp > "2014-01-06 07:00:00" & timestamp <= "2014-01-06 07:12:00")
+
+gps_car_filter2
+```
+
+```{r}
+gps_car_group2 <- gps_car_filter2 %>%
+  group_by(timestamp, CarID) %>%
+  summarize(count = n()) %>%
+  ungroup() 
+```
+
+```{r}
+gps_car_group2 %>%
+  plot_ly(x = ~timestamp, y = ~count, color = ~as.factor(CarID)) %>%
+  add_bars %>%
+  layout(xaxis = list(title  = ""))
+
+
+```
+
+### filter for timestamp 07:01:00 to 07:10:00
+```{r}
+gps_car_filter3 <- gps_car %>%
+  filter(timestamp > "2014-01-06 07:12:00" & timestamp < "2014-01-06 07:28:00")
+
+gps_car_filter3
+```
+
+```{r}
+gps_car_group3 <- gps_car_filter3 %>%
+  group_by(timestamp, CarID) %>%
+  summarize(count = n()) %>%
+  ungroup() 
+```
+
+```{r}
+gps_car_group3 %>%
+  plot_ly(x = ~timestamp, y = ~count, color = ~as.factor(CarID)) %>%
+  add_bars %>%
+  layout(xaxis = list(title  = ""))
+
+
+```
+
+
+
+### join gps,car with cc
+```{r}
+cc_gps <- cc_loyalty_join %>%
+  inner_join(gps_car, by = "timestamp") %>%
+  arrange(timestamp, CarID)
+
+cc_gps
+
+```
+
+Notice that when we joined both dataset, we can find several discrepancies in the data, First, at each moment the last4ccnum and loyaltynum is the same. However, the CarID is different. The reason to this is because we simply join the vehicle and purchases dataset by the time stamp. This is wrong as there might be occasion where at the same moment, one person could be moving about but not purchasing anything while the other could be at a shop buying stuff.
+
+
+To resolve this discrepancies. We will need to make use of the map data to find out the actual places based on the lat long data provided.
+
+
