@@ -364,7 +364,7 @@ glimpse(gps_cleaned)
 
 Below we will discuss some methodology and visualization methods used to answer the questions later.
 
-## 3.1. Bar Chart
+### 3.1. Bar Chart
 
 First, we will be using a bar chart to analyse the number of patrons to each location. A bar chart is very useful to analyse categorical data based on number of instances.
 
@@ -374,20 +374,20 @@ The plotly bar chart is accessible later in the question segment.
 ![](img/bar chart.png)
 
 
-## line chart
+### 3.2. line chart
 
 To visualize timeseries data, a time-series line chart is great for analysis. 
 
 The below line chart uses the top few most visited places to plot into a timeseries line.
 ![](img/line chart.png)
 
-Geospatial visualization
+### 3.3. Geospatial visualization
 
 Next, a geospatial map visualisation is created to analyse the movement of each vehicle.
 
 ![](img/geo.png)
 
-Network analysis
+### 3.4. Network analysis
 
 An interactive network data analysis is created to visualise the realtionship between each person.
 
@@ -398,7 +398,7 @@ Notice that the carid can be selected to see its relationship between other cari
 
 # 4. Answers
 
-## 4.1.  Using just the credit and loyalty card data, identify the most popular locations, and when they are popular. What anomalies do you see? What corrections would you recommend to correct these anomalies? Please limit your answer to 8 images and 300 words.
+### 4.1.  Using just the credit and loyalty card data, identify the most popular locations, and when they are popular. What anomalies do you see? What corrections would you recommend to correct these anomalies? Please limit your answer to 8 images and 300 words.
 
 
 
@@ -454,6 +454,8 @@ loyalty_dt_bar
 Next, an inner join will be conducted by joining date, location and price and will will output into a new object *cc_loyalty_join*.
 
 Notice that there are only 1,087 rows wheareas both cc_dtsplit and loyalty_dt has 1490 and 1392 rows respectfully. These shows that some of the data in cc does not match the loyalty data which strengthens the initial anomaly that some of the employees uses one of each card but not both during purchases.
+
+
 ```{r}
 cc_loyalty_join <- cc_dtsplit %>%
   inner_join(loyalty_dt, by = c("date","location", "price"))
@@ -758,6 +760,8 @@ subplot(cc_join, cc_anti, cc_anti_right, nrows = 1, shareX = TRUE, shareY = TRUE
 Lastly, we will the cc_loyalty_join dataset with itself by "last4ccnum","location","price", "time", "date" and filter by different loyaltynum. The cc_loyalty dataset is the initial inner join dataset.
 
 Based on the below tibble. We can see that there are 12 instances where there are 6 cc users using different loyaltynum. This is another anomaly that has been found.
+
+
 ```{r}
 cc_loyalty_join %>% 
   inner_join(cc_loyalty_join, by = c("last4ccnum", "location", "price","time", "date")) %>%
@@ -765,7 +769,7 @@ cc_loyalty_join %>%
 ```
 
 
-## 4.2.	Add the vehicle data to your analysis of the credit and loyalty card data. How does your assessment of the anomalies in question 1 change based on this new data? What discrepancies between vehicle, credit, and loyalty card data do you find? Please limit your answer to 8 images and 500 words.
+### 4.2.	Add the vehicle data to your analysis of the credit and loyalty card data. How does your assessment of the anomalies in question 1 change based on this new data? What discrepancies between vehicle, credit, and loyalty card data do you find? Please limit your answer to 8 images and 500 words.
 
 
 
@@ -774,6 +778,8 @@ We will examine the two vehicle related data. Gps and car-assignments data.
 The car-assignment data with a total of 44 rows consists of the name and appointment of the employee tag to a CarID. 
 
 The GPS data with a total of 685169 rows consists of the id of the car and its movement based on latitude and longitude with timestamp.
+
+
 ```{r}
 glimpse(car_unite)
 glimpse(gps_cleaned)
@@ -984,9 +990,9 @@ To resolve this discrepancies. We will need to make use of the map data to find 
 
 
 
-## 4.3. Can you infer the owners of each credit card and loyalty card? What is your evidence? Where are there uncertainties in your method? Where are there uncertainties in the data? Please limit your answer to 8 images and 500 words.
+### 4.3. Can you infer the owners of each credit card and loyalty card? What is your evidence? Where are there uncertainties in your method? Where are there uncertainties in the data? Please limit your answer to 8 images and 500 words.
 
-TO infer the cc and loyalty card data to the CarID, we will need to use the movement data using the geospatial data that was provided. We will first take a look at the tourist map in jpg form. Notice that there are some locations that were provided in the cc and loyalty dataset but not detectable in the tourist map. As such, there are some discrepancies in the map given. 
+To infer the cc and loyalty card data to the CarID, we will need to use the movement data using the geospatial data that was provided. We will first take a look at the tourist map in jpg form. Notice that there are some locations that were provided in the cc and loyalty dataset but not detectable in the tourist map. As such, there are some discrepancies in the map given. 
 
 ![](img/MC2-tourist.jpg)
 
@@ -1199,7 +1205,7 @@ car_cc
 
 
 
-## 4.4. Given the data sources provided, identify potential informal or unofficial relationships among GASTech personnel. Provide evidence for these relationships. Please limit your response to 8 images and 500 words.
+### 4.4. Given the data sources provided, identify potential informal or unofficial relationships among GASTech personnel. Provide evidence for these relationships. Please limit your response to 8 images and 500 words.
 
 Network analysis is used to detect relationship between people of interests.
 
@@ -1282,6 +1288,10 @@ ccassgn_5min_select
 ```
 
 Next, we will join the same table with each other to examine any close relationship between each other. Notice that there are CarID_1 and CarID_2. As there should not be two CarID that are the same with each other. We will take it out on the next code chunk.
+
+
+
+
 ```{r}
 car_location_edges <- ccassgn_5min_select %>%
   inner_join(ccassgn_5min_select, by = c("time_5","location","day"), suffix = c("_1","_2"))
@@ -1403,7 +1413,9 @@ g + theme_graph()
 
 Next, we will prepare for the interactive network analysis using visNetwork.
 
-First, we will rename the CarID to id and current employment type to group which is required for visNetwork
+First, we will rename the CarID to id and current employment type to group which is required for visNetwork.
+
+
 
 
 ```{r}
@@ -1493,7 +1505,9 @@ car_cc_anti_left
 ```
 
 
-Select out those columsn required
+Select out those columns required
+
+
 ```{r}
 cc_anti_left_5min_select <- car_cc_anti_left %>%
   select(CarID,time_5,location,name,day)
@@ -1515,6 +1529,8 @@ car_location_anti_left_edges
 ```
 
 Remove those rows with same CarID.
+
+
 ```{r}
 car_location_anti_left_edges_aggregated <- car_location_anti_left_edges %>%
   group_by(CarID_1, CarID_2, time_5, location, day) %>%
@@ -1623,6 +1639,8 @@ car_location_anti_right_edges
 ```
 
 Gather those carids that have close relationship.
+
+
 ```{r}
 car_location_anti_right_edges_aggregated <- car_location_anti_right_edges %>%
   group_by(CarID_1, CarID_2, location, date) %>%
@@ -1637,6 +1655,8 @@ car_location_anti_right_edges_aggregated
 ```
 
 Preapre for visNetwork network analysis
+
+
 ```{r}
 car_location_anti_right_edges_aggregated_vis <- car_location_anti_right_edges %>%
 left_join(car_nodes_rename, by = c("name_1"="name")) %>%
@@ -1650,7 +1670,9 @@ filter(weight >1) %>%
 ungroup()
 ```
 
-NEtwork analysis for left anti join loyalty to cc dataset.
+Network analysis for left anti join loyalty to cc dataset.
+
+
 ```{r}
 visNetwork(car_nodes_rename,
 car_location_anti_right_edges_aggregated_vis ) %>%
@@ -1669,7 +1691,7 @@ visLayout(randomSeed =
 )
 ```
 
-network analysis for left anti join cc to loyalty dataset.
+Network analysis for left anti join cc to loyalty dataset.
 
 
 ```{r}
@@ -1712,7 +1734,7 @@ visLayout(randomSeed =
 ```
 
 
-## 4.5. Do you see evidence of suspicious activity? Identify 1- 10 locations where you believe the suspicious activity is occurring, and why Please limit your response to 10 images and 500 words.
+### 4.5. Do you see evidence of suspicious activity? Identify 1- 10 locations where you believe the suspicious activity is occurring, and why Please limit your response to 10 images and 500 words.
 
 ### 4.5.1 Day 11, CarID 26 visited a house at Canero street.
 
